@@ -1,4 +1,4 @@
-import { Flex, Text, Wrap } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
 export const Band = () => {
   return (
