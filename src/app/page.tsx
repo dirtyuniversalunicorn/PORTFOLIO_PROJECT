@@ -2,6 +2,8 @@ import { Band } from "@/components/Band";
 import { AboutSection } from "@/components/AboutSection";
 import { Title } from "@/components/Title";
 import { Flex } from "@chakra-ui/react";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { HeroSection } from "@/components/HeroSection";
 
 const socials = [
   "facebook.png",
@@ -14,12 +16,9 @@ const socials = [
 export default async function Home() {
   return (
     <>
-      <Flex id="landing_page_section" flexDirection="column">
-        <Band />
-        <Title title="Jaroslav Fiľo" />
-      </Flex>
+      <HeroSection />
       <AboutSection socials={socials} />
-      <Flex>Portfolios Section</Flex>
+      <ProjectsSection />
       <Flex>Stack</Flex>
       <Flex>Footer</Flex>
     </>

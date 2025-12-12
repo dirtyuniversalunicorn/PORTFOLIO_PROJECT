@@ -10,3 +10,9 @@ body {
   background-position: center;
   height: 100vh;
 }
+#section_portfolios {
+  background-image: url("/background.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}

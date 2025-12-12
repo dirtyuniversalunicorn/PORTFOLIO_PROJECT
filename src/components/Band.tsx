@@ -8,14 +8,14 @@ export const Band = () => {
       flexDirection={{ base: "column", md: "row" }}
       gap={{ base: 10, md: 0 }}
       width={{ base: "95%", md: "100%" }}
-      top="40%"
+      position="absolute"
+      top="20%"
       ml={{ base: "5%", md: 0 }}
       fontSize={{ base: "xl" }}
       textTransform="uppercase"
       fontWeight={100}
       letterSpacing={2}
       opacity={0.7}
-      position="absolute"
     >
       <Text>Developer</Text>
       <Text>Innovator</Text>

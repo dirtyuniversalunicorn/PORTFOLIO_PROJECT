@@ -10,6 +10,7 @@ import { Photo } from "./Photo";
 export const AboutSection = ({ socials }: AboutSectionProps) => {
   return (
     <Grid
+      as="section"
       templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
       gap={5}
       mx={{ base: "20px", md: "auto" }}
