@@ -4,6 +4,8 @@ import { Title } from "@/components/Title";
 import { Flex } from "@chakra-ui/react";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { HeroSection } from "@/components/HeroSection";
+import { TechStackSection } from "@/components/TechStackSection.tsx";
+import { Footer } from "@/components/Footer";
 
 const socials = [
   "facebook.png",
@@ -19,8 +21,8 @@ export default async function Home() {
       <HeroSection />
       <AboutSection socials={socials} />
       <ProjectsSection />
-      <Flex>Stack</Flex>
-      <Flex>Footer</Flex>
+      <TechStackSection />
+      <Footer />
     </>
   );
 }

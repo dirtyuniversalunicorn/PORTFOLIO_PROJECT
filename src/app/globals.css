@@ -16,3 +16,10 @@ body {
   background-position: center;
   height: 100vh;
 }
+
+#footer_section {
+  background-image: url("/background_footer.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
