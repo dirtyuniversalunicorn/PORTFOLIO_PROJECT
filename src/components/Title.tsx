@@ -3,7 +3,7 @@ import { Flex, Text } from "@chakra-ui/react";
 
 export const Title = ({ title }: TitleProps) => {
   return (
-    <Flex alignItems="baseline" spaceX="5px">
+    <Flex spaceX="5px" mt="auto" mx="auto">
       <Text
         as="h1"
         fontSize={{
@@ -15,6 +15,7 @@ export const Title = ({ title }: TitleProps) => {
         }}
         textAlign={{ base: "center", sm: "left" }}
         fontWeight={400}
+        width="100%"
       >
         {title}
       </Text>
