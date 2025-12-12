@@ -1,7 +1,4 @@
-import { Band } from "@/components/Band";
 import { AboutSection } from "@/components/AboutSection";
-import { Title } from "@/components/Title";
-import { Flex } from "@chakra-ui/react";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { HeroSection } from "@/components/HeroSection";
 import { TechStackSection } from "@/components/TechStackSection.tsx";
