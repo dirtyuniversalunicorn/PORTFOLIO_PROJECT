@@ -1,4 +1,4 @@
-import { NavigationItemProps } from "@/types/NavigationItemProps";
+import type { NavigationItemProps } from "@/types/NavigationItemProps";
 import { Box } from "@chakra-ui/react";
 
 export const NavigationItem = ({ navigationItem }: NavigationItemProps) => {
