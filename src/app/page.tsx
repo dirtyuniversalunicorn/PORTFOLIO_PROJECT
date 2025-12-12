@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div>Home page</div>;
+  return <section id="landing_page_section"></section>;
 }

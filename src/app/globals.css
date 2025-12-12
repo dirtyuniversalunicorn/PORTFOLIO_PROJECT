@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+#landing_page_section {
+  background-image: url("/landing_page_image.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
