@@ -1,4 +1,4 @@
-import { SocialsProps } from "@/types/AboutSectionProps";
+import type { SocialsProps } from "@/types/AboutSectionProps";
 import { Wrap, Image } from "@chakra-ui/react";
 
 export const Socials = ({ socials }: SocialsProps) => {
