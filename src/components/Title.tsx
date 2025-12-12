@@ -16,6 +16,7 @@ export const Title = ({ title }: TitleProps) => {
         textAlign={{ base: "center", sm: "left" }}
         fontWeight={400}
         width="100%"
+        opacity={0.2}
       >
         {title}
       </Text>
