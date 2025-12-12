@@ -4,9 +4,15 @@ import { Flex } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <Flex id="landing_page_section" flexDirection="column">
-      <Band />
-      <Title title="Jaroslav Fiľo" />
-    </Flex>
+    <>
+      <Flex id="landing_page_section" flexDirection="column">
+        <Band />
+        <Title title="Jaroslav Fiľo" />
+      </Flex>
+      <Flex>About Me Section</Flex>
+      <Flex>Portfolios Section</Flex>
+      <Flex>Stack</Flex>
+      <Flex>Footer</Flex>
+    </>
   );
 }

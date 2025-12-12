@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  background-color: #0e1011;
+}
+
 #landing_page_section {
   background-image: url("/landing_page_image.png");
   background-size: cover;
