@@ -9,12 +9,19 @@ import { Photo } from "./Photo";
 
 export const AboutSection = ({ socials }: AboutSectionProps) => {
   return (
-    <Grid templateColumns="repeat(2, 1fr)" mx="auto" maxWidth={900} py={20}>
+    <Grid
+      templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+      gap={5}
+      mx={{ base: "20px", md: "auto" }}
+      maxWidth={900}
+      py={20}
+    >
       <Photo />
       <Box
         display="flex"
         flexDirection="column"
         maxHeight={400}
+        gap={{ base: 7 }}
         justifyContent="space-between"
       >
         <Description />

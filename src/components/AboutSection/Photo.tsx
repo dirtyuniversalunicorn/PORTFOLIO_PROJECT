@@ -2,7 +2,10 @@ import { Box, Text, Image } from "@chakra-ui/react";
 
 export const Photo = () => {
   return (
-    <Box>
+    <Box
+      display={{ base: "flex", md: "block" }}
+      flexDirection={{ base: "column" }}
+    >
       <Text
         as="h3"
         textTransform="uppercase"

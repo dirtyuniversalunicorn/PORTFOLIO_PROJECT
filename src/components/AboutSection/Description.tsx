@@ -2,7 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 
 export const Description = () => {
   return (
-    <Text fontSize={"2xl"}>
+    <Text order={{ base: 2, md: 1 }} fontSize={"2xl"}>
       I’m a passionate and motivated Fronted Developer with strong foundation
       <Box as="span" opacity={0.5}>
         {" "}
