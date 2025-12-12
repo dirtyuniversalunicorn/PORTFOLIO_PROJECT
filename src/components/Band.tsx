@@ -9,7 +9,7 @@ export const Band = () => {
       gap={{ base: 10, md: 0 }}
       width={{ base: "95%", md: "100%" }}
       position="absolute"
-      top="20%"
+      top="300px"
       ml={{ base: "5%", md: 0 }}
       fontSize={{ base: "xl" }}
       textTransform="uppercase"
