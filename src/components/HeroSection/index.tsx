@@ -6,7 +6,7 @@ export const HeroSection = () => {
   return (
     <Flex as="section" id="landing_page_section" flexDirection="column">
       <Band />
-      <Title title="Jaroslav Fiľo" />
+      <Title textAlign={"center"} title="Jaroslav Fiľo" />
     </Flex>
   );
 };
