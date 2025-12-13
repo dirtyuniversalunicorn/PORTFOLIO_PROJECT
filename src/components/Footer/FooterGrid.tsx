@@ -2,7 +2,7 @@ import { Grid, Box, GridItem } from "@chakra-ui/react";
 import { FooterGridList } from "./FooterGridList";
 import { footerPages } from "@/constants/footerPages";
 import { footerNecessities } from "@/constants/footerNecessities";
-import { Socials } from "../AboutSection/Socials";
+import { Socials } from "../Socials";
 import { socials } from "@/constants/socials";
 
 export const FooterGrid = () => {

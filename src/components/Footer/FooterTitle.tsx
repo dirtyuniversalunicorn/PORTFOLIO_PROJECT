@@ -9,7 +9,6 @@ export const FooterTitle = ({ title, ...props }: TitleProps) => {
         textAlign={{ base: "left", sm: "left" }}
         fontWeight={400}
         width="100%"
-        // opacity={0.2}
         {...props}
       >
         {title}

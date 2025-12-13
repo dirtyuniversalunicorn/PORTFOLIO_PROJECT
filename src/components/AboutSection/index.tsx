@@ -1,5 +1,5 @@
 import { Box, Grid } from "@chakra-ui/react";
-import { Socials } from "./Socials";
+import { Socials } from "../Socials";
 import type { AboutSectionProps } from "@/types/AboutSectionProps";
 import { Stats } from "./Stats";
 import { Description } from "./Description";
