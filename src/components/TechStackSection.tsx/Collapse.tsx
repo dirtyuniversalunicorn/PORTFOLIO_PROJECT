@@ -1,4 +1,4 @@
-import { TechStack } from "@/types/CollapseProps";
+import type { TechStack } from "@/types/CollapseProps";
 import { Flex, Collapsible, Image, Stack, Text, Box } from "@chakra-ui/react";
 import { LuChevronRight } from "react-icons/lu";
 import Link from "next/link";
