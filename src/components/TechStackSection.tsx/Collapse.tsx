@@ -53,7 +53,7 @@ export const Collapse = ({ techStackItems }: CollapseProps) => {
               {stackItem.items.map((item) => (
                 <Link key={item.index} href={item.docsUrl} target="_blank">
                   <Flex alignItems="center" gap={5}>
-                    <Image src={item.imagePath} />
+                    <Image src={item.imagePath || undefined} />
                     <Text>{item.name}</Text>
                   </Flex>
                 </Link>
