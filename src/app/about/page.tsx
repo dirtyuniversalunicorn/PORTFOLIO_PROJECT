@@ -1,5 +1,12 @@
-import { Text } from "@chakra-ui/react";
+import { Career } from "@/components/Career";
+import { jobs } from "@/constants/projects";
+import { Box, Text } from "@chakra-ui/react";
 
 export default async function About() {
-  return <Text>This is page about me.</Text>;
+  return (
+    <Box>
+      <Text>This is page about me.</Text>
+      <Career jobs={jobs} />
+    </Box>
+  );
 }
