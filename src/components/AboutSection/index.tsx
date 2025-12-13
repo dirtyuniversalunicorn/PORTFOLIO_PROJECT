@@ -23,7 +23,6 @@ export const AboutSection = ({ socials }: AboutSectionProps) => {
       <Box
         display="flex"
         flexDirection="column"
-        // maxHeight={400}
         gap={{ base: 7 }}
         justifyContent="space-between"
       >

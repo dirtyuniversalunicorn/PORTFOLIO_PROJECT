@@ -1,5 +1,5 @@
 import { Career } from "@/components/Career";
-import { jobs } from "@/constants/projects";
+import { jobs } from "@/constants/jobs";
 import { Box, Text } from "@chakra-ui/react";
 
 export default async function About() {

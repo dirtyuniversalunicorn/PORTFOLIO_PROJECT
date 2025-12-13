@@ -1,4 +1,6 @@
-import { Box, Flex, Grid, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Grid, List, Text } from "@chakra-ui/react";
+import { projects } from "@/constants/projects";
+import Link from "next/link";
 
 export const ProjectsSection = () => {
   return (
@@ -11,7 +13,7 @@ export const ProjectsSection = () => {
       >
         <Grid gridTemplateColumns="repeat(2, auto)">
           <Text textTransform="uppercase" letterSpacing={1.2} fontWeight={300}>
-            Selection of my work
+            My recent work
           </Text>
           <Text
             fontSize="7xl"
@@ -25,6 +27,30 @@ export const ProjectsSection = () => {
             Projects
           </Text>
         </Grid>
+        <List.Root listStyle="none" gap={10} mt="12">
+          {projects.slice(0, 4).map((project) => (
+            <List.Item
+              key={project.id}
+              textTransform="uppercase"
+              letterSpacing={1.61}
+              mt="2"
+            >
+              <Flex gap={2}>
+                {project.technologies.map((technology) => (
+                  <Badge key={technology}>{technology}</Badge>
+                ))}
+              </Flex>
+              <Link href="/projects">
+                <Text fontSize="3xl" fontWeight={700}>
+                  {project.title}
+                </Text>
+              </Link>
+              <Text fontSize="base" opacity={0.5}>
+                {project.shortDescription}
+              </Text>
+            </List.Item>
+          ))}
+        </List.Root>
       </Flex>
     </Box>
   );

@@ -19,7 +19,6 @@ export const TechStackSection = () => {
             fontSize="7xl"
             opacity={0.025}
             textAlign="right"
-            // display={{ base: "none", md: "block" }}
             zIndex={1}
             position="absolute"
             right={0}
