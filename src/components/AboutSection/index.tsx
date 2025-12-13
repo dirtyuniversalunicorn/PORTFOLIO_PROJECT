@@ -15,7 +15,7 @@ export const AboutSection = ({ socials }: AboutSectionProps) => {
       as="section"
       templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
       gap={5}
-      mx={{ base: "20px", md: "auto" }}
+      mx={{ base: "5%", lg: "auto" }}
       maxWidth={900}
       py={20}
     >

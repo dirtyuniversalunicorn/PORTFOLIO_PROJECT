@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
 import { Navigation } from "@/components/Navigation";
+import { ProgressIndicator } from "@/components/ProgressIndicator.tsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Provider>
           <Navigation />
+          <ProgressIndicator />
           {children}
         </Provider>
       </body>
