@@ -4,6 +4,8 @@ import type { AboutSectionProps } from "@/types/AboutSectionProps";
 import { Stats } from "./Stats";
 import { Description } from "./Description";
 import { Photo } from "./Photo";
+import { Button } from "../Button.tsx";
+import Link from "next/link";
 
 // TODO types
 
@@ -21,19 +23,27 @@ export const AboutSection = ({ socials }: AboutSectionProps) => {
       <Box
         display="flex"
         flexDirection="column"
-        maxHeight={400}
+        // maxHeight={400}
         gap={{ base: 7 }}
         justifyContent="space-between"
       >
         <Description />
         <Socials socials={socials} />
         <Stats />
+        <Box order={{ base: 4 }}>
+          <Link href="/about">
+            <Button
+              variant="transparent"
+              buttonTitle="More about me..."
+              mt="auto"
+            />
+          </Link>
+        </Box>
       </Box>
     </Grid>
   );
 };
 
 // TODO email icon
-// TODO phone
 // TODO render Float based on prop
 // TODO add links to icons
