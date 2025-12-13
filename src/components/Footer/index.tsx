@@ -5,7 +5,7 @@ import { FooterCTAGrid } from "./FooterCTAGrid";
 
 export const Footer = () => {
   return (
-    <Box id="footer_section">
+    <Box id="footer_section" display="flex" flexDirection="column">
       <Grid
         gridTemplateRows="repeat(2, auto)"
         maxWidth={1400}
