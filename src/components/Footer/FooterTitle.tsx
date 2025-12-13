@@ -6,7 +6,7 @@ export const FooterTitle = ({ title, ...props }: TitleProps) => {
     <Flex spaceX="5px">
       <Text
         as="h2"
-        textAlign={{ base: "center", sm: "left" }}
+        textAlign={{ base: "left", sm: "left" }}
         fontWeight={400}
         width="100%"
         // opacity={0.2}

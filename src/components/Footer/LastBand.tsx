@@ -1,4 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 export const LastBand = () => {
   const year = new Date().getFullYear();
@@ -12,7 +13,13 @@ export const LastBand = () => {
       mx="auto"
       width="100%"
     >
-      <Text>©{year} Designed by Naeem, coded by Me</Text>
+      <Text>
+        ©{year} Designed by{" "}
+        <Link href="https://www.behance.net/swifttech03" target="_blank">
+          Naeem
+        </Link>
+        , coded by Me
+      </Text>
     </Flex>
   );
 };
