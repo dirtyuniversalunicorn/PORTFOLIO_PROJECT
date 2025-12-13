@@ -1,9 +1,9 @@
 import type { TitleProps } from "@/types/TitleProps";
 import { Flex, Text } from "@chakra-ui/react";
 
-export const Title = ({ title }: TitleProps) => {
+export const Title = ({ title, ...props }: TitleProps) => {
   return (
-    <Flex spaceX="5px" mt="auto" mx="auto">
+    <Flex spaceX="5px" mt="auto" mx="auto" width="100%">
       <Text
         as="h1"
         fontSize={{
@@ -17,6 +17,7 @@ export const Title = ({ title }: TitleProps) => {
         fontWeight={400}
         width="100%"
         opacity={0.2}
+        {...props}
       >
         {title}
       </Text>

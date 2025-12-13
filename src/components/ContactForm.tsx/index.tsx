@@ -1,13 +1,16 @@
-import { Input, Textarea, Box } from "@chakra-ui/react";
+import { Input, Textarea, Box, Flex } from "@chakra-ui/react";
 import Form from "next/form";
+import { FormInput } from "./FormInput";
 export const ContactForm = () => {
   return (
-    <Box>
+    <Box my="auto" pt="20">
       <Form action="/">
-        <Input placeholder="How should I adress you" />
-        <Input placeholder="Enter your email, so I can come back to you." />
-        <Textarea placeholder="Enter your message" />
-        <Input type="submit" />
+        <Flex flexDirection="column" gap={4}>
+          <FormInput placeholder="Your name" />
+          <FormInput placeholder="Your email" />
+          <FormInput textArea placeholder="Your message" />
+          <FormInput submitButton />
+        </Flex>
       </Form>
     </Box>
   );
