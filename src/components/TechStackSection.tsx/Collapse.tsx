@@ -9,12 +9,13 @@ type CollapseProps = {
 
 export const Collapse = ({ techStackItems }: CollapseProps) => {
   return (
-    <Box mt="10">
-      {techStackItems.map((stackItem) => (
+    <Box mt="10" zIndex={99}>
+      {techStackItems.map((stackItem, index) => (
         <Collapsible.Root
           key={stackItem.category}
           borderBottom="1px solid"
           borderColor="whiteAlpha.400"
+          defaultOpen={index === 0}
         >
           <Collapsible.Trigger
             paddingY="3"
@@ -40,7 +41,12 @@ export const Collapse = ({ techStackItems }: CollapseProps) => {
             <Stack
               padding="4"
               display="grid"
-              gridTemplateColumns="repeat(4, 1fr)"
+              gridTemplateColumns={{
+                base: "repeat(1, 1fr)",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
+                lg: "repeat(4, 1fr)",
+              }}
               gap={4}
               flexDirection="row"
             >
