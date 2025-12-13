@@ -2,6 +2,7 @@ export const projects = [
   {
     id: 0,
     title: "dock appointment scheduling system",
+    slug: "dock-appointment-scheduling-system",
     shortDescription: "short description",
     longDescription: "longDescription",
     date: "13.12.2025",
@@ -10,6 +11,7 @@ export const projects = [
   {
     id: 1,
     title: "galéria u anjela",
+    slug: "galeria-u-anjela",
     shortDescription: "short description",
     longDescription: "longDescription",
     date: "13.12.2025",
@@ -26,6 +28,7 @@ export const projects = [
   {
     id: 2,
     title: "portfolio",
+    slug: "portfolio",
     shortDescription: "short description",
     longDescription: "longDescription",
     date: "13.12.2025",
@@ -41,6 +44,7 @@ export const projects = [
   {
     id: 3,
     title: "dock appointment scheduling system",
+    slug: "dock-appointment-scheduling-system-2",
     shortDescription: "short description",
     longDescription: "longDescription",
     date: "13.12.2025",
@@ -49,6 +53,7 @@ export const projects = [
   {
     id: 4,
     title: "galéria u anjela",
+    slug: "galeria-u-anjela-2",
     shortDescription: "short description",
     longDescription: "longDescription",
     date: "13.12.2025",
@@ -65,6 +70,7 @@ export const projects = [
   {
     id: 5,
     title: "portfolio",
+    slug: "portfolio-2",
     shortDescription: "short description",
     longDescription: "longDescription",
     date: "13.12.2025",

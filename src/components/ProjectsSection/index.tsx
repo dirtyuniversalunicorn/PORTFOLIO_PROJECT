@@ -40,7 +40,7 @@ export const ProjectsSection = () => {
                   <Badge key={technology}>{technology}</Badge>
                 ))}
               </Flex>
-              <Link href="/projects">
+              <Link href={`/projects/${project.slug}`}>
                 <Text fontSize="3xl" fontWeight={700}>
                   {project.title}
                 </Text>

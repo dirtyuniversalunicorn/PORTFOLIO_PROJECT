@@ -6,10 +6,10 @@ export const FooterCTAGrid = () => {
   return (
     <Grid
       gridTemplateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
-      gap={4}
+      gap={36}
     >
       <Flex my="auto" pt={{ base: "20" }} flexDirection="column" gap={4}>
-        <Flex width={"100%"} flexDirection={"column"}>
+        <Flex flexDirection={"column"}>
           <FooterTitle
             fontSize={{ base: "lg", md: "2xl" }}
             title="Do you have question, idea,"
