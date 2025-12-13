@@ -1,7 +1,6 @@
-import { TechStack, TechStackCategory } from "@/types/CollapseProps";
-import { Flex, Collapsible, Image, Stack, Text } from "@chakra-ui/react";
+import { TechStack } from "@/types/CollapseProps";
+import { Flex, Collapsible, Image, Stack, Text, Box } from "@chakra-ui/react";
 import { LuChevronRight } from "react-icons/lu";
-import { Socials } from "../Socials";
 import Link from "next/link";
 
 type CollapseProps = {
@@ -10,7 +9,7 @@ type CollapseProps = {
 
 export const Collapse = ({ techStackItems }: CollapseProps) => {
   return (
-    <>
+    <Box mt="10">
       {techStackItems.map((stackItem) => (
         <Collapsible.Root
           key={stackItem.category}
@@ -57,6 +56,6 @@ export const Collapse = ({ techStackItems }: CollapseProps) => {
           </Collapsible.Content>
         </Collapsible.Root>
       ))}
-    </>
+    </Box>
   );
 };
