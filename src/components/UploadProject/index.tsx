@@ -1,6 +1,5 @@
 "use client";
 
-import { Input } from "@chakra-ui/react";
 import { useState } from "react";
 import { FormInput } from "../ContactForm.tsx/FormInput";
 
