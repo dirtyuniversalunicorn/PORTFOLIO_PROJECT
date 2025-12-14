@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma, Role } from "../app/generated/prisma/client";
+import { Prisma, PrismaClient, Role } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
 
@@ -27,15 +27,6 @@ const userData: Prisma.UserCreateInput[] = [
     },
   },
 ];
-
-// const projectData: Prisma.UserCreateInput[] = [
-//   {
-//     title: "Dock Appointment Scheduling System",
-//     shortDescription: "This is short description.",
-//     longDescription: "This is loooooooooong description.",
-//     technologies: ["nextjs", "ant design", "tailwind css"],
-//   },
-// ];
 
 export async function main() {
   for (const u of userData) {
