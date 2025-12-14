@@ -19,7 +19,8 @@ export async function POST(req: Request) {
   }
 
   const buffer = Buffer.from(await file.arrayBuffer());
-  const key = `uploads/${Date.now()}-${file.name}`;
+  const key = `projects/${file.name}`;
+  const url = `${process.env.R2_PUBLIC_DEVELOPMENT_URL}/${key}`;
 
   await s3.send(
     new PutObjectCommand({
@@ -32,6 +33,6 @@ export async function POST(req: Request) {
 
   return Response.json({
     key,
-    url: `/images/${key}`,
+    url,
   });
 }
