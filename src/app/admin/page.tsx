@@ -7,6 +7,8 @@ import { Table } from "../../components/Table";
 import { Button } from "@/components/Button.tsx";
 import Link from "next/link";
 
+// this page does not need footer!
+
 export default async function Admin() {
   const projects = await prisma.project.findMany();
   return (
