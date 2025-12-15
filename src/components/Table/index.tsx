@@ -44,8 +44,8 @@ export const Table = ({ items }: ProjectTableProps) => {
             </ChakraTable.Cell>
 
             <ChakraTable.Cell textAlign="center">
-              {item.imageUrl.map((url) => (
-                <Icon key={url}>
+              {item.imageUrl.map((url, index) => (
+                <Icon key={index}>
                   <Link href={url} target="_blank">
                     <FaExternalLinkAlt />
                   </Link>
