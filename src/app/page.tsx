@@ -12,7 +12,6 @@ export default async function Home() {
       <AboutSection socials={socials} />
       <ProjectsSection />
       <TechStackSection />
-      <Footer />
     </>
   );
 }
