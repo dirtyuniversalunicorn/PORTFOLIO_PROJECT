@@ -2,7 +2,7 @@ import Form from "next/form";
 import { FormInput } from "../ContactForm.tsx/FormInput";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import prisma from "@/lib/prisma";
 
 export default function UploadProjectForm() {
@@ -37,7 +37,6 @@ export default function UploadProjectForm() {
 
     const { url } = await uploadRes.json();
 
-    // 2️⃣ Save project with imageUrl
     await prisma.project.create({
       data: {
         title,
@@ -49,13 +48,15 @@ export default function UploadProjectForm() {
       },
     });
 
-    revalidatePath("/projects");
-    redirect("/projects");
+    revalidatePath("/admin");
+    redirect("/admin");
   }
 
   return (
-    <Box border="1px solid red">
-      <h1 className="text-2xl font-bold mb-6">New Project</h1>
+    <Box>
+      <Text fontWeight={300} fontSize="2xl">
+        Add New Project
+      </Text>
 
       <Form action={createProject} className="space-y-6">
         <FormInput name="project_title" required placeholder="Project Title" />
