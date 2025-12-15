@@ -3,6 +3,6 @@ export type ProjectProps = {
   title: string;
   shortDescription: string;
   longDescription: string;
-  date: string; // or Date (see note below)
   technologies: string[];
+  imageUrl: string;
 };
