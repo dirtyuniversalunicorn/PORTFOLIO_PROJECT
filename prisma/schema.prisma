@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -19,19 +19,20 @@ enum Role {
 }
 
 model User {
-  id  Int   @id @default(autoincrement())
-  email String @unique
-  name String?
-  role Role @default(USER)
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
+  name     String?
+  role     Role      @default(USER)
   projects Project[]
 }
 
 model Project {
-  id Int @id @default(autoincrement())
-  title String
+  id               Int      @id @default(autoincrement())
+  title            String
   shortDescription String
-  longDescription String
-  technologies String[]
-  authorId Int
-  author User @relation(fields: [authorId], references: [id])
+  longDescription  String
+  technologies     String[]
+  imageUrl         String
+  authorId         Int
+  author           User     @relation(fields: [authorId], references: [id])
 }

@@ -87,6 +87,7 @@ export const ProjectScalarFieldEnum = {
   shortDescription: 'shortDescription',
   longDescription: 'longDescription',
   technologies: 'technologies',
+  imageUrl: 'imageUrl',
   authorId: 'authorId'
 } as const
 
