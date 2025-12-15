@@ -2,7 +2,7 @@
 // pretty much content management system
 
 // import { UploadProject } from "@/components/UploadProject";
-import NewProjectForm from "@/components/UploadProject/NewProjectForm";
+import { UploadProject } from "@/components/UploadProject";
 import prisma from "@/lib/prisma";
 import { Box, Text } from "@chakra-ui/react";
 
@@ -12,7 +12,7 @@ export default async function Admin() {
     <Box as="section">
       <h1>Admin page</h1>
       <Box mt={96} maxWidth={1400} mx="auto">
-        {/* <UploadProject /> */}
+        <UploadProject />
         {projects.map((project) => (
           <Box key={project.id}>
             <Text>Title: {project.title}</Text>
@@ -22,7 +22,6 @@ export default async function Admin() {
           </Box>
         ))}
       </Box>
-      <NewProjectForm />
     </Box>
   );
 }
