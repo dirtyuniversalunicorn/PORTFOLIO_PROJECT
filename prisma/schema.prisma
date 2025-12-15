@@ -32,7 +32,8 @@ model Project {
   shortDescription String
   longDescription  String
   technologies     String[]
-  imageUrl         String
+  imageUrl         String[]
+  websiteUrl       String
   authorId         Int
   author           User     @relation(fields: [authorId], references: [id])
 }

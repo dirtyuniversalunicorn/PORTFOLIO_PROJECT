@@ -22,8 +22,11 @@ const userData: Prisma.UserCreateInput[] = [
           shortDescription: "This is short description",
           longDescription: "This is loooooooooooooooong description",
           technologies: ["nextjs", "ant design", "tailwind css"],
-          imageUrl:
+          imageUrl: [
             "https://www.prisma.io/docs/guides/nextjs#5-add-a-new-posts-detail-page",
+            "https://www.prisma.io/docs/guides/nextjs#5-add-a-new-posts-detail-page",
+          ],
+          websiteUrl: "https://k2-dass.sanitino.cz",
         },
       ],
     },
