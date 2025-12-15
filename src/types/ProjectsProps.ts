@@ -4,5 +4,5 @@ export type ProjectProps = {
   shortDescription: string;
   longDescription: string;
   technologies: string[];
-  imageUrl: string;
+  imageUrl: string[];
 };

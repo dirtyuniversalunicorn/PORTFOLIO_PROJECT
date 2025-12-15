@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   experimental: {
     optimizePackageImports: ["@chakra-ui/react"],
+    serverActions: {
+      bodySizeLimit: "3mb",
+    },
   },
 };
 

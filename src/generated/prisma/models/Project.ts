@@ -41,7 +41,7 @@ export type ProjectMinAggregateOutputType = {
   title: string | null
   shortDescription: string | null
   longDescription: string | null
-  imageUrl: string | null
+  websiteUrl: string | null
   authorId: number | null
 }
 
@@ -50,7 +50,7 @@ export type ProjectMaxAggregateOutputType = {
   title: string | null
   shortDescription: string | null
   longDescription: string | null
-  imageUrl: string | null
+  websiteUrl: string | null
   authorId: number | null
 }
 
@@ -61,6 +61,7 @@ export type ProjectCountAggregateOutputType = {
   longDescription: number
   technologies: number
   imageUrl: number
+  websiteUrl: number
   authorId: number
   _all: number
 }
@@ -81,7 +82,7 @@ export type ProjectMinAggregateInputType = {
   title?: true
   shortDescription?: true
   longDescription?: true
-  imageUrl?: true
+  websiteUrl?: true
   authorId?: true
 }
 
@@ -90,7 +91,7 @@ export type ProjectMaxAggregateInputType = {
   title?: true
   shortDescription?: true
   longDescription?: true
-  imageUrl?: true
+  websiteUrl?: true
   authorId?: true
 }
 
@@ -101,6 +102,7 @@ export type ProjectCountAggregateInputType = {
   longDescription?: true
   technologies?: true
   imageUrl?: true
+  websiteUrl?: true
   authorId?: true
   _all?: true
 }
@@ -197,7 +199,8 @@ export type ProjectGroupByOutputType = {
   shortDescription: string
   longDescription: string
   technologies: string[]
-  imageUrl: string
+  imageUrl: string[]
+  websiteUrl: string
   authorId: number
   _count: ProjectCountAggregateOutputType | null
   _avg: ProjectAvgAggregateOutputType | null
@@ -230,7 +233,8 @@ export type ProjectWhereInput = {
   shortDescription?: Prisma.StringFilter<"Project"> | string
   longDescription?: Prisma.StringFilter<"Project"> | string
   technologies?: Prisma.StringNullableListFilter<"Project">
-  imageUrl?: Prisma.StringFilter<"Project"> | string
+  imageUrl?: Prisma.StringNullableListFilter<"Project">
+  websiteUrl?: Prisma.StringFilter<"Project"> | string
   authorId?: Prisma.IntFilter<"Project"> | number
   author?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
@@ -242,6 +246,7 @@ export type ProjectOrderByWithRelationInput = {
   longDescription?: Prisma.SortOrder
   technologies?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   author?: Prisma.UserOrderByWithRelationInput
 }
@@ -255,7 +260,8 @@ export type ProjectWhereUniqueInput = Prisma.AtLeast<{
   shortDescription?: Prisma.StringFilter<"Project"> | string
   longDescription?: Prisma.StringFilter<"Project"> | string
   technologies?: Prisma.StringNullableListFilter<"Project">
-  imageUrl?: Prisma.StringFilter<"Project"> | string
+  imageUrl?: Prisma.StringNullableListFilter<"Project">
+  websiteUrl?: Prisma.StringFilter<"Project"> | string
   authorId?: Prisma.IntFilter<"Project"> | number
   author?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id">
@@ -267,6 +273,7 @@ export type ProjectOrderByWithAggregationInput = {
   longDescription?: Prisma.SortOrder
   technologies?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
   _count?: Prisma.ProjectCountOrderByAggregateInput
   _avg?: Prisma.ProjectAvgOrderByAggregateInput
@@ -284,7 +291,8 @@ export type ProjectScalarWhereWithAggregatesInput = {
   shortDescription?: Prisma.StringWithAggregatesFilter<"Project"> | string
   longDescription?: Prisma.StringWithAggregatesFilter<"Project"> | string
   technologies?: Prisma.StringNullableListFilter<"Project">
-  imageUrl?: Prisma.StringWithAggregatesFilter<"Project"> | string
+  imageUrl?: Prisma.StringNullableListFilter<"Project">
+  websiteUrl?: Prisma.StringWithAggregatesFilter<"Project"> | string
   authorId?: Prisma.IntWithAggregatesFilter<"Project"> | number
 }
 
@@ -293,7 +301,8 @@ export type ProjectCreateInput = {
   shortDescription: string
   longDescription: string
   technologies?: Prisma.ProjectCreatetechnologiesInput | string[]
-  imageUrl: string
+  imageUrl?: Prisma.ProjectCreateimageUrlInput | string[]
+  websiteUrl: string
   author: Prisma.UserCreateNestedOneWithoutProjectsInput
 }
 
@@ -303,7 +312,8 @@ export type ProjectUncheckedCreateInput = {
   shortDescription: string
   longDescription: string
   technologies?: Prisma.ProjectCreatetechnologiesInput | string[]
-  imageUrl: string
+  imageUrl?: Prisma.ProjectCreateimageUrlInput | string[]
+  websiteUrl: string
   authorId: number
 }
 
@@ -312,7 +322,8 @@ export type ProjectUpdateInput = {
   shortDescription?: Prisma.StringFieldUpdateOperationsInput | string
   longDescription?: Prisma.StringFieldUpdateOperationsInput | string
   technologies?: Prisma.ProjectUpdatetechnologiesInput | string[]
-  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.ProjectUpdateimageUrlInput | string[]
+  websiteUrl?: Prisma.StringFieldUpdateOperationsInput | string
   author?: Prisma.UserUpdateOneRequiredWithoutProjectsNestedInput
 }
 
@@ -322,7 +333,8 @@ export type ProjectUncheckedUpdateInput = {
   shortDescription?: Prisma.StringFieldUpdateOperationsInput | string
   longDescription?: Prisma.StringFieldUpdateOperationsInput | string
   technologies?: Prisma.ProjectUpdatetechnologiesInput | string[]
-  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.ProjectUpdateimageUrlInput | string[]
+  websiteUrl?: Prisma.StringFieldUpdateOperationsInput | string
   authorId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
@@ -332,7 +344,8 @@ export type ProjectCreateManyInput = {
   shortDescription: string
   longDescription: string
   technologies?: Prisma.ProjectCreatetechnologiesInput | string[]
-  imageUrl: string
+  imageUrl?: Prisma.ProjectCreateimageUrlInput | string[]
+  websiteUrl: string
   authorId: number
 }
 
@@ -341,7 +354,8 @@ export type ProjectUpdateManyMutationInput = {
   shortDescription?: Prisma.StringFieldUpdateOperationsInput | string
   longDescription?: Prisma.StringFieldUpdateOperationsInput | string
   technologies?: Prisma.ProjectUpdatetechnologiesInput | string[]
-  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.ProjectUpdateimageUrlInput | string[]
+  websiteUrl?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type ProjectUncheckedUpdateManyInput = {
@@ -350,7 +364,8 @@ export type ProjectUncheckedUpdateManyInput = {
   shortDescription?: Prisma.StringFieldUpdateOperationsInput | string
   longDescription?: Prisma.StringFieldUpdateOperationsInput | string
   technologies?: Prisma.ProjectUpdatetechnologiesInput | string[]
-  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.ProjectUpdateimageUrlInput | string[]
+  websiteUrl?: Prisma.StringFieldUpdateOperationsInput | string
   authorId?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
@@ -379,6 +394,7 @@ export type ProjectCountOrderByAggregateInput = {
   longDescription?: Prisma.SortOrder
   technologies?: Prisma.SortOrder
   imageUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
 }
 
@@ -392,7 +408,7 @@ export type ProjectMaxOrderByAggregateInput = {
   title?: Prisma.SortOrder
   shortDescription?: Prisma.SortOrder
   longDescription?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
 }
 
@@ -401,7 +417,7 @@ export type ProjectMinOrderByAggregateInput = {
   title?: Prisma.SortOrder
   shortDescription?: Prisma.SortOrder
   longDescription?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
+  websiteUrl?: Prisma.SortOrder
   authorId?: Prisma.SortOrder
 }
 
@@ -456,7 +472,16 @@ export type ProjectCreatetechnologiesInput = {
   set: string[]
 }
 
+export type ProjectCreateimageUrlInput = {
+  set: string[]
+}
+
 export type ProjectUpdatetechnologiesInput = {
+  set?: string[]
+  push?: string | string[]
+}
+
+export type ProjectUpdateimageUrlInput = {
   set?: string[]
   push?: string | string[]
 }
@@ -466,7 +491,8 @@ export type ProjectCreateWithoutAuthorInput = {
   shortDescription: string
   longDescription: string
   technologies?: Prisma.ProjectCreatetechnologiesInput | string[]
-  imageUrl: string
+  imageUrl?: Prisma.ProjectCreateimageUrlInput | string[]
+  websiteUrl: string
 }
 
 export type ProjectUncheckedCreateWithoutAuthorInput = {
@@ -475,7 +501,8 @@ export type ProjectUncheckedCreateWithoutAuthorInput = {
   shortDescription: string
   longDescription: string
   technologies?: Prisma.ProjectCreatetechnologiesInput | string[]
-  imageUrl: string
+  imageUrl?: Prisma.ProjectCreateimageUrlInput | string[]
+  websiteUrl: string
 }
 
 export type ProjectCreateOrConnectWithoutAuthorInput = {
@@ -513,7 +540,8 @@ export type ProjectScalarWhereInput = {
   shortDescription?: Prisma.StringFilter<"Project"> | string
   longDescription?: Prisma.StringFilter<"Project"> | string
   technologies?: Prisma.StringNullableListFilter<"Project">
-  imageUrl?: Prisma.StringFilter<"Project"> | string
+  imageUrl?: Prisma.StringNullableListFilter<"Project">
+  websiteUrl?: Prisma.StringFilter<"Project"> | string
   authorId?: Prisma.IntFilter<"Project"> | number
 }
 
@@ -523,7 +551,8 @@ export type ProjectCreateManyAuthorInput = {
   shortDescription: string
   longDescription: string
   technologies?: Prisma.ProjectCreatetechnologiesInput | string[]
-  imageUrl: string
+  imageUrl?: Prisma.ProjectCreateimageUrlInput | string[]
+  websiteUrl: string
 }
 
 export type ProjectUpdateWithoutAuthorInput = {
@@ -531,7 +560,8 @@ export type ProjectUpdateWithoutAuthorInput = {
   shortDescription?: Prisma.StringFieldUpdateOperationsInput | string
   longDescription?: Prisma.StringFieldUpdateOperationsInput | string
   technologies?: Prisma.ProjectUpdatetechnologiesInput | string[]
-  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.ProjectUpdateimageUrlInput | string[]
+  websiteUrl?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type ProjectUncheckedUpdateWithoutAuthorInput = {
@@ -540,7 +570,8 @@ export type ProjectUncheckedUpdateWithoutAuthorInput = {
   shortDescription?: Prisma.StringFieldUpdateOperationsInput | string
   longDescription?: Prisma.StringFieldUpdateOperationsInput | string
   technologies?: Prisma.ProjectUpdatetechnologiesInput | string[]
-  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.ProjectUpdateimageUrlInput | string[]
+  websiteUrl?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type ProjectUncheckedUpdateManyWithoutAuthorInput = {
@@ -549,7 +580,8 @@ export type ProjectUncheckedUpdateManyWithoutAuthorInput = {
   shortDescription?: Prisma.StringFieldUpdateOperationsInput | string
   longDescription?: Prisma.StringFieldUpdateOperationsInput | string
   technologies?: Prisma.ProjectUpdatetechnologiesInput | string[]
-  imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  imageUrl?: Prisma.ProjectUpdateimageUrlInput | string[]
+  websiteUrl?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -561,6 +593,7 @@ export type ProjectSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   longDescription?: boolean
   technologies?: boolean
   imageUrl?: boolean
+  websiteUrl?: boolean
   authorId?: boolean
   author?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["project"]>
@@ -572,6 +605,7 @@ export type ProjectSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   longDescription?: boolean
   technologies?: boolean
   imageUrl?: boolean
+  websiteUrl?: boolean
   authorId?: boolean
   author?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["project"]>
@@ -583,6 +617,7 @@ export type ProjectSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   longDescription?: boolean
   technologies?: boolean
   imageUrl?: boolean
+  websiteUrl?: boolean
   authorId?: boolean
   author?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["project"]>
@@ -594,10 +629,11 @@ export type ProjectSelectScalar = {
   longDescription?: boolean
   technologies?: boolean
   imageUrl?: boolean
+  websiteUrl?: boolean
   authorId?: boolean
 }
 
-export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "shortDescription" | "longDescription" | "technologies" | "imageUrl" | "authorId", ExtArgs["result"]["project"]>
+export type ProjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "shortDescription" | "longDescription" | "technologies" | "imageUrl" | "websiteUrl" | "authorId", ExtArgs["result"]["project"]>
 export type ProjectInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   author?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -619,7 +655,8 @@ export type $ProjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     shortDescription: string
     longDescription: string
     technologies: string[]
-    imageUrl: string
+    imageUrl: string[]
+    websiteUrl: string
     authorId: number
   }, ExtArgs["result"]["project"]>
   composites: {}
@@ -1050,7 +1087,8 @@ export interface ProjectFieldRefs {
   readonly shortDescription: Prisma.FieldRef<"Project", 'String'>
   readonly longDescription: Prisma.FieldRef<"Project", 'String'>
   readonly technologies: Prisma.FieldRef<"Project", 'String[]'>
-  readonly imageUrl: Prisma.FieldRef<"Project", 'String'>
+  readonly imageUrl: Prisma.FieldRef<"Project", 'String[]'>
+  readonly websiteUrl: Prisma.FieldRef<"Project", 'String'>
   readonly authorId: Prisma.FieldRef<"Project", 'Int'>
 }
     
