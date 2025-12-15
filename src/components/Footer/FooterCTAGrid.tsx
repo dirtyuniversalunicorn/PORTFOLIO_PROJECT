@@ -1,4 +1,4 @@
-import { Grid, Flex, Stack } from "@chakra-ui/react";
+import { Grid, Stack } from "@chakra-ui/react";
 import { ContactForm } from "../ContactForm.tsx/index";
 import { FooterTitle } from "./FooterTitle";
 
