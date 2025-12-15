@@ -1,8 +1,10 @@
 import { Badge, Box, Flex, Grid, List, Text, Wrap } from "@chakra-ui/react";
-import { projects } from "@/constants/projects";
 import Link from "next/link";
+import prisma from "@/lib/prisma";
 
-export const ProjectsSection = () => {
+export const ProjectsSection = async () => {
+  const projects = await prisma.project.findMany();
+
   return (
     <Box id="section_portfolios" as="section" py={36}>
       <Flex
@@ -28,7 +30,7 @@ export const ProjectsSection = () => {
           </Text>
         </Grid>
         <List.Root listStyle="none" gap={10} mt="12">
-          {projects.slice(0, 4).map((project) => (
+          {projects.slice(0, 3).map((project) => (
             <List.Item
               key={project.id}
               textTransform="uppercase"
@@ -40,7 +42,7 @@ export const ProjectsSection = () => {
                   <Badge key={technology}>{technology}</Badge>
                 ))}
               </Wrap>
-              <Link href={`/projects/${project.slug}`}>
+              <Link href={`/projects/${project.title}`}>
                 <Text fontSize="3xl" fontWeight={700}>
                   {project.title}
                 </Text>

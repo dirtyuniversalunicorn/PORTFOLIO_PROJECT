@@ -1,5 +1,5 @@
 import type { ProjectProps } from "@/types/ProjectsProps";
-import { Table as ChakraTable, Icon } from "@chakra-ui/react";
+import { Text, Table as ChakraTable, Icon, Flex } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -26,7 +26,10 @@ export const Table = ({ items }: ProjectTableProps) => {
           <ChakraTable.Row key={item.id}>
             <ChakraTable.Cell>{item.title}</ChakraTable.Cell>
             <ChakraTable.Cell>{item.shortDescription}</ChakraTable.Cell>
-            <ChakraTable.Cell>{item.technologies}</ChakraTable.Cell>
+            <ChakraTable.Cell>
+              <Text>{item.technologies.join(", ")}</Text>
+            </ChakraTable.Cell>
+
             <ChakraTable.Cell textAlign="center">
               <Icon>
                 <Link href={item.imageUrl} target="_blank">
