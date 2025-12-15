@@ -7,6 +7,8 @@ export type ProjectTableProps = {
   items: ProjectProps[];
 };
 
+// TODO provide links for projects
+
 export const Table = ({ items }: ProjectTableProps) => {
   console.log("Table items: ", items);
   return (
