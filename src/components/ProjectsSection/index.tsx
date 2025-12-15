@@ -42,7 +42,7 @@ export const ProjectsSection = async () => {
                   <Badge key={technology}>{technology}</Badge>
                 ))}
               </Wrap>
-              <Link href={`/projects/${project.title}`}>
+              <Link href={`/projects/${project.id}`}>
                 <Text fontSize="3xl" fontWeight={700}>
                   {project.title}
                 </Text>

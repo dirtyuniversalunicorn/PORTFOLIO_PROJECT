@@ -10,7 +10,7 @@ import Link from "next/link";
 export default async function Admin() {
   const projects = await prisma.project.findMany();
   return (
-    <Box as="section" pt={40}>
+    <Box as="section" py={40}>
       <Box maxWidth={1400} mx="auto">
         <Link href="/admin/newProject">
           <Button buttonTitle="Add new project" />
