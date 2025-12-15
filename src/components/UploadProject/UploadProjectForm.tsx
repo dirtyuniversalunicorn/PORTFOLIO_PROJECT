@@ -10,6 +10,7 @@ export default function UploadProjectForm() {
     "use server";
 
     const title = formData.get("project_title") as string;
+    const websiteUrl = formData.get("website_url") as string;
     const shortDescription = formData.get("short_description") as string;
     const longDescription = formData.get("long_description") as string;
     const technologies = (formData.get("technologies") as string)
@@ -43,11 +44,12 @@ export default function UploadProjectForm() {
     await prisma.project.create({
       data: {
         title,
+        websiteUrl,
         shortDescription,
         longDescription,
         technologies,
-        imageUrl: url,
-        authorId: 2,
+        imageUrl: [url],
+        authorId: 1,
       },
     });
 
@@ -63,6 +65,7 @@ export default function UploadProjectForm() {
 
       <Form action={createProject} className="space-y-6">
         <FormInput name="project_title" required placeholder="Project Title" />
+        <FormInput name="website_url" required placeholder="Website URL" />
 
         <FormInput
           name="short_description"

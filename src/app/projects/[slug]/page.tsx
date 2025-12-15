@@ -1,16 +1,7 @@
 import { DisplayBadges } from "@/components/Badges";
 import { IconTooltip } from "@/components/IconTooltip";
 import prisma from "@/lib/prisma";
-import {
-  Badge,
-  Box,
-  Grid,
-  Text,
-  Stack,
-  Wrap,
-  Image,
-  HStack,
-} from "@chakra-ui/react";
+import { Grid, Text, Stack, Image, HStack, Wrap } from "@chakra-ui/react";
 import { notFound } from "next/navigation";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -32,26 +23,33 @@ export default async function ProjectDetail({
   }
 
   return (
-    <Box as="section" py={40} maxWidth={1400} mx="auto">
+    <Stack
+      as="section"
+      py={40}
+      gap={10}
+      maxWidth={1400}
+      mx={{ base: "5%", lg: "auto" }}
+    >
       <Grid gridTemplateColumns="repeat(2, 1fr)">
         <Stack>
           <HStack gap={4}>
             <Text as="h1" fontSize={{ base: "5xl" }}>
               {projectDetails?.title}
             </Text>
-
+          </HStack>
+          <Wrap>
             <IconTooltip
               content="Visit project"
-              link={projectDetails.imageUrl}
+              link={projectDetails.websiteUrl}
               icon={<FaExternalLinkAlt />}
             />
-          </HStack>
-          <DisplayBadges badgeData={projectDetails.technologies} />
+            <DisplayBadges badgeData={projectDetails.technologies} />
+          </Wrap>
           <Text>{projectDetails?.shortDescription}</Text>
           <Text>{projectDetails?.longDescription}</Text>
         </Stack>
-        <Image src={projectDetails.imageUrl} />
+        <Image src={projectDetails.imageUrl[0]} />
       </Grid>
-    </Box>
+    </Stack>
   );
 }
