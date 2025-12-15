@@ -3,6 +3,8 @@ import { LastBand } from "./LastBand";
 import { FooterGrid } from "./FooterGrid";
 import { FooterCTAGrid } from "./FooterCTAGrid";
 
+// TODO flex + column nahrad za stack
+
 export const Footer = () => {
   return (
     <Box id="footer_section" display="flex" flexDirection="column">

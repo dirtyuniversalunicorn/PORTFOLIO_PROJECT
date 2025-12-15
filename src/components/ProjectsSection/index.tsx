@@ -36,9 +36,9 @@ export const ProjectsSection = () => {
               mt="2"
             >
               <Flex gap={2}>
-                {project.technologies.map((technology) => (
+                {/* TODO responsive {project.technologies.map((technology) => (
                   <Badge key={technology}>{technology}</Badge>
-                ))}
+                ))} */}
               </Flex>
               <Link href={`/projects/${project.slug}`}>
                 <Text fontSize="3xl" fontWeight={700}>
