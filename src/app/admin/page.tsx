@@ -1,7 +1,6 @@
 // TODO - this will be protected path
 // pretty much content management system
 
-import { UploadProject } from "@/components/UploadProject";
 import prisma from "@/lib/prisma";
 import { Box } from "@chakra-ui/react";
 import { Table } from "../../components/Table";
