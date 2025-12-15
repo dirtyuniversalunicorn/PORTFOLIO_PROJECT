@@ -1,9 +1,8 @@
-import { ProjectProps } from "@/types/ProjectsProps";
+import type { ProjectProps } from "@/types/ProjectsProps";
 import { Table as ChakraTable, Icon } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-// TODO Types
 export type ProjectTableProps = {
   items: ProjectProps[];
 };

@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, Grid, List, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Grid, List, Text, Wrap } from "@chakra-ui/react";
 import { projects } from "@/constants/projects";
 import Link from "next/link";
 
@@ -35,11 +35,11 @@ export const ProjectsSection = () => {
               letterSpacing={1.61}
               mt="2"
             >
-              <Flex gap={2}>
-                {/* TODO responsive {project.technologies.map((technology) => (
+              <Wrap gap={2}>
+                {project.technologies.map((technology) => (
                   <Badge key={technology}>{technology}</Badge>
-                ))} */}
-              </Flex>
+                ))}
+              </Wrap>
               <Link href={`/projects/${project.slug}`}>
                 <Text fontSize="3xl" fontWeight={700}>
                   {project.title}

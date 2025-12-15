@@ -3,7 +3,7 @@ import Form from "next/form";
 import { FormInput } from "./FormInput";
 export const ContactForm = () => {
   return (
-    <Box my="auto" pt={{ base: "3", md: "20" }}>
+    <Box my="auto" pt={{ base: "3", lg: "20" }}>
       <Form action="/">
         <Flex flexDirection="column" gap={4}>
           <FormInput placeholder="Your name" />

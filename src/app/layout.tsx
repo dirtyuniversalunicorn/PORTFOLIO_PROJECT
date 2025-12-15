@@ -4,6 +4,7 @@ import "./globals.css";
 import { Provider } from "@/components/ui/provider";
 import { Navigation } from "@/components/Navigation";
 import { ProgressIndicator } from "@/components/ProgressIndicator.tsx";
+import { Footer } from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
           <Navigation />
           <ProgressIndicator />
           {children}
+          <Footer />
         </Provider>
       </body>
     </html>
