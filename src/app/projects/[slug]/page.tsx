@@ -2,7 +2,7 @@ import { DisplayBadges } from "@/components/Badges";
 import { Carousel } from "@/components/Carousel";
 import { IconTooltip } from "@/components/IconTooltip";
 import prisma from "@/lib/prisma";
-import { Grid, Text, Stack, Image, HStack, Wrap } from "@chakra-ui/react";
+import { Grid, Text, Stack, HStack, Wrap } from "@chakra-ui/react";
 import { notFound } from "next/navigation";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
