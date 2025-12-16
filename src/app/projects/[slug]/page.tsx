@@ -1,4 +1,5 @@
 import { DisplayBadges } from "@/components/Badges";
+import { Carousel } from "@/components/Carousel";
 import { IconTooltip } from "@/components/IconTooltip";
 import prisma from "@/lib/prisma";
 import { Grid, Text, Stack, Image, HStack, Wrap } from "@chakra-ui/react";
@@ -48,7 +49,8 @@ export default async function ProjectDetail({
           <Text>{projectDetails?.shortDescription}</Text>
           <Text>{projectDetails?.longDescription}</Text>
         </Stack>
-        <Image src={projectDetails.imageUrl[0]} />
+        {/* <Image src={projectDetails.imageUrl[0]} /> */}
+        <Carousel items={projectDetails.imageUrl} />
       </Grid>
     </Stack>
   );
