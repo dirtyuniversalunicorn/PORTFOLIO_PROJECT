@@ -17,8 +17,8 @@ export const Band = () => {
       letterSpacing={2}
       opacity={0.7}
     >
+      <Text>Frontend</Text>
       <Text>Developer</Text>
-      <Text>Innovator</Text>
       <Text>Olomouc, CZECH REPUBLIC</Text>
     </Flex>
   );

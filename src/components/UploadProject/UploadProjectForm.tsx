@@ -18,28 +18,33 @@ export default function UploadProjectForm() {
       .map((t) => t.trim())
       .filter(Boolean);
 
-    const file = formData.get("file") as File;
+    const files = formData.getAll("files") as File[];
 
-    if (!file) {
-      throw new Error("Image is required");
+    if (!files) {
+      throw new Error("Images are required");
     }
 
-    const uploadFormData = new FormData();
-    uploadFormData.append("file", file);
+    const uploadedImageUrls = await Promise.all(
+      files.map(async (file) => {
+        const formData = new FormData();
+        formData.append("file", file);
 
-    const uploadRes = await fetch(
-      `${process.env.NEXT_PUBLIC_APP_URL}/api/upload`,
-      {
-        method: "POST",
-        body: uploadFormData,
-      }
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_APP_URL}/api/upload`,
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        if (!res.ok) {
+          throw new Error(`Upload failed: ${file.name}`);
+        }
+
+        const { url } = await res.json();
+        return url;
+      })
     );
-
-    if (!uploadRes.ok) {
-      throw new Error("Image upload failed");
-    }
-
-    const { url } = await uploadRes.json();
 
     await prisma.project.create({
       data: {
@@ -48,7 +53,7 @@ export default function UploadProjectForm() {
         shortDescription,
         longDescription,
         technologies,
-        imageUrl: [url],
+        imageUrl: uploadedImageUrls,
         authorId: 1,
       },
     });
@@ -86,7 +91,7 @@ export default function UploadProjectForm() {
           placeholder="next.js, tailwind css, prisma..."
         />
 
-        <input type="file" name="file" accept="image/*" required />
+        <input type="file" multiple name="files" accept="image/*" required />
 
         <button
           type="submit"
