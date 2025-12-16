@@ -1,3 +1,4 @@
+import { BackgroundText } from "@/components/BackgroundText";
 import { ProjectList } from "@/components/ProjectsSection/ProjectList";
 import prisma from "@/lib/prisma";
 import { Stack, Text } from "@chakra-ui/react";
@@ -14,17 +15,7 @@ export default async function Projects() {
       maxWidth={1400}
       mx={{ base: "5%", lg: "auto" }}
     >
-      <Text
-        fontSize="7xl"
-        opacity={0.05}
-        textAlign="right"
-        zIndex={1}
-        position="absolute"
-        right={0}
-        mx={"5%"}
-      >
-        Projects
-      </Text>
+      <BackgroundText text="Projects" />{" "}
       <ProjectList projects={projects} limit="all" />
     </Stack>
   );
