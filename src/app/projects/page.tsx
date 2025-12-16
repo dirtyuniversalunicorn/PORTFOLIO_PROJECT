@@ -1,7 +1,7 @@
 import { BackgroundText } from "@/components/BackgroundText";
 import { ProjectList } from "@/components/ProjectsSection/ProjectList";
 import prisma from "@/lib/prisma";
-import { Stack, Text } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 
 // TODO types
 
@@ -15,7 +15,7 @@ export default async function Projects() {
       maxWidth={1400}
       mx={{ base: "5%", lg: "auto" }}
     >
-      <BackgroundText text="Projects" />{" "}
+      <BackgroundText text="Projects" />
       <ProjectList projects={projects} limit="all" />
     </Stack>
   );

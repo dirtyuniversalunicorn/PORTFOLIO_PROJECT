@@ -1,5 +1,4 @@
-import { Flex } from "@chakra-ui/react";
-import { CareerList, CareerListProps } from "./CareerList";
+import { Flex, Timeline } from "@chakra-ui/react";
 import { CareerItem, CareerItemProps } from "./CareerItem";
 
 export type CareerProps = {
@@ -10,15 +9,16 @@ export const Career = ({ jobs }: CareerProps) => {
   return (
     <Flex
       maxWidth={1000}
-      mx={{ base: "5%", lg: "auto" }}
+      mx={{ base: "5%" }}
       flexDirection="column"
       gap={5}
+      mt={12}
     >
-      <CareerList>
+      <Timeline.Root>
         {jobs.map((job: CareerItemProps) => (
           <CareerItem key={job.index} {...job} />
         ))}
-      </CareerList>
+      </Timeline.Root>
     </Flex>
   );
 };

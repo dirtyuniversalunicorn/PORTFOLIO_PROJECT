@@ -1,5 +1,5 @@
 import { Timeline, Text } from "@chakra-ui/react";
-import { LuShip } from "react-icons/lu";
+import { MdWorkOutline } from "react-icons/md";
 
 export type CareerItemProps = {
   index: number;
@@ -14,13 +14,15 @@ export const CareerItem = ({ title, description, text }: CareerItemProps) => {
       <Timeline.Connector>
         <Timeline.Separator />
         <Timeline.Indicator>
-          <LuShip />
+          <MdWorkOutline />
         </Timeline.Indicator>
       </Timeline.Connector>
       <Timeline.Content>
-        <Timeline.Title>{title}</Timeline.Title>
-        <Timeline.Description>{description}</Timeline.Description>
-        <Text textStyle="sm">{text}</Text>
+        <Timeline.Title textTransform="uppercase">{title}</Timeline.Title>
+        <Timeline.Description color="white">{description}</Timeline.Description>
+        <Text textStyle="md" color="whiteAlpha.700">
+          {text}
+        </Text>
       </Timeline.Content>
     </Timeline.Item>
   );
