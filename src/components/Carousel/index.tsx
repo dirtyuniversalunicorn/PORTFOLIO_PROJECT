@@ -14,11 +14,13 @@ export const Carousel = ({ items }: CarouselProps) => {
   return (
     <ChakraCarousel.Root slideCount={items.length} gap="4">
       <ChakraCarousel.Control justifyContent="center" gap="4" width="full">
-        <ChakraCarousel.PrevTrigger asChild>
-          <IconButton size="xs" variant="outline" borderColor="white">
-            <LuArrowLeft />
-          </IconButton>
-        </ChakraCarousel.PrevTrigger>
+        {items.length > 1 && (
+          <ChakraCarousel.PrevTrigger asChild>
+            <IconButton size="xs" variant="outline" borderColor="white">
+              <LuArrowLeft />
+            </IconButton>
+          </ChakraCarousel.PrevTrigger>
+        )}
 
         <ChakraCarousel.ItemGroup width="full">
           {items.map((item, index) => (
@@ -30,14 +32,16 @@ export const Carousel = ({ items }: CarouselProps) => {
           ))}
         </ChakraCarousel.ItemGroup>
 
-        <ChakraCarousel.NextTrigger asChild>
-          <IconButton size="xs" variant="outline" borderColor="white">
-            <LuArrowRight />
-          </IconButton>
-        </ChakraCarousel.NextTrigger>
+        {items.length > 1 && (
+          <ChakraCarousel.NextTrigger asChild>
+            <IconButton size="xs" variant="outline" borderColor="white">
+              <LuArrowRight />
+            </IconButton>
+          </ChakraCarousel.NextTrigger>
+        )}
       </ChakraCarousel.Control>
 
-      <ChakraCarousel.Indicators />
+      {items.length > 1 && <ChakraCarousel.Indicators />}
     </ChakraCarousel.Root>
   );
 };
