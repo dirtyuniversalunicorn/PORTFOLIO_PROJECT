@@ -3,8 +3,6 @@ import { ProjectList } from "@/components/ProjectsSection/ProjectList";
 import prisma from "@/lib/prisma";
 import { Stack } from "@chakra-ui/react";
 
-// TODO types
-
 export default async function Projects() {
   const projects = await prisma.project.findMany();
   return (

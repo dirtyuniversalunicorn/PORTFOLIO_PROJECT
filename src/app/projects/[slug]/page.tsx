@@ -1,10 +1,8 @@
-import { DisplayBadges } from "@/components/Badges";
 import { Carousel } from "@/components/Carousel";
-import { IconTooltip } from "@/components/IconTooltip";
 import prisma from "@/lib/prisma";
-import { Grid, Text, Stack, HStack, Wrap } from "@chakra-ui/react";
+import { Grid, Stack } from "@chakra-ui/react";
 import { notFound } from "next/navigation";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { ProjectCharacteristics } from "./components/ProjectCharacteristics";
 
 export default async function ProjectDetail({
   params,
@@ -27,29 +25,14 @@ export default async function ProjectDetail({
     <Stack
       as="section"
       py={40}
-      gap={10}
       maxWidth={1400}
-      mx={{ base: "5%", lg: "auto" }}
+      mx={{ base: "5%", "2xl": "auto" }}
     >
-      <Grid gridTemplateColumns="repeat(2, 1fr)">
-        <Stack>
-          <HStack gap={4}>
-            <Text as="h1" fontSize={{ base: "5xl" }}>
-              {projectDetails?.title}
-            </Text>
-          </HStack>
-          <Wrap>
-            <IconTooltip
-              content="Visit project"
-              link={projectDetails.websiteUrl}
-              icon={<FaExternalLinkAlt />}
-            />
-            <DisplayBadges badgeData={projectDetails.technologies} />
-          </Wrap>
-          <Text>{projectDetails?.shortDescription}</Text>
-          <Text>{projectDetails?.longDescription}</Text>
-        </Stack>
-        {/* <Image src={projectDetails.imageUrl[0]} /> */}
+      <Grid
+        gridTemplateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
+        gap={{ base: 10 }}
+      >
+        <ProjectCharacteristics projectDetails={projectDetails} />
         <Carousel items={projectDetails.imageUrl} />
       </Grid>
     </Stack>
