@@ -1,6 +1,6 @@
 import { DisplayBadges } from "@/components/Badges";
 import { IconTooltip } from "@/components/IconTooltip";
-import { ProjectProps } from "@/types/ProjectsProps";
+import type { ProjectProps } from "@/types/ProjectsProps";
 import { Stack, HStack, Wrap, Text } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 

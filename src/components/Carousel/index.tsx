@@ -1,19 +1,10 @@
 import {
   Center,
   Carousel as ChakraCarousel,
-  HStack,
   IconButton,
   Image,
 } from "@chakra-ui/react";
-import {
-  LuArrowLeft,
-  LuArrowRight,
-  LuChevronLeft,
-  LuChevronRight,
-  LuClock,
-  LuPause,
-  LuPlay,
-} from "react-icons/lu";
+import { LuChevronLeft, LuChevronRight, LuPause, LuPlay } from "react-icons/lu";
 
 export type CarouselProps = {
   items: string[];
