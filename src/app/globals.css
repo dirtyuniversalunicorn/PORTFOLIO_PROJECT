@@ -5,11 +5,16 @@ body {
 }
 
 #landing_page_section {
+  height: 100vh;
+}
+
+#about_me_page_section,
+#landing_page_section {
   background-image: url("/landing_page_image.png");
   background-size: cover;
   background-position: center;
-  height: 100vh;
 }
+
 #section_portfolios {
   background-image: url("/background.png");
   background-size: cover;
