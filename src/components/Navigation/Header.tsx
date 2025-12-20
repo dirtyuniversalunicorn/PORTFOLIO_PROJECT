@@ -11,8 +11,8 @@ export const Header = ({ children }: HeaderProps) => {
       justifyContent="space-between"
       alignItems="center"
       position="absolute"
-      px={10}
-      pt={6}
+      px={{ base: "5%", md: 10 }}
+      pt={{ base: "2%", md: 6 }}
       w="100%"
     >
       {children}
