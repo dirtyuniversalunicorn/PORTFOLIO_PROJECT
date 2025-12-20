@@ -1,6 +1,7 @@
 import { Photo } from "@/components/AboutSection/Photo";
 import { BackgroundText } from "@/components/BackgroundText";
 import { Career } from "@/components/Career";
+import { Education } from "@/components/Education";
 import { MarqueeSlider } from "@/components/Marquee";
 import { techStackItems } from "@/constants/techStackItems";
 import { Box, Flex, Image } from "@chakra-ui/react";
@@ -50,6 +51,9 @@ export default async function About() {
             />
           ))}
         </MarqueeSlider>
+      </Box>
+      <Box as="section">
+        <Education />
       </Box>
     </>
   );
