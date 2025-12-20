@@ -1,3 +1,5 @@
+"use client";
+
 import { Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -23,5 +25,3 @@ export const LastBand = () => {
     </Flex>
   );
 };
-
-// TODO add link to Naeem
