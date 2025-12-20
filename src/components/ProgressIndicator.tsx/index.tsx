@@ -35,7 +35,8 @@ export const ProgressIndicator = () => {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, [pathname]); // this dependency is intentional, because I need to run this useEffect when page changes
+    // biome-ignore: lint/correctness/useExhaustiveDependencies
+  }, [pathname]);
 
   if (!isScrollable) return null;
 
