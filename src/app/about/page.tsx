@@ -1,6 +1,7 @@
 import { Photo } from "@/components/AboutSection/Photo";
 import { BackgroundText } from "@/components/BackgroundText";
 import { Career } from "@/components/Career";
+import { Education } from "@/components/Education";
 import { MarqueeSlider } from "@/components/Marquee";
 import { techStackItems } from "@/constants/techStackItems";
 import { Box, Flex, Image } from "@chakra-ui/react";
@@ -31,16 +32,15 @@ export default async function About() {
   return (
     <>
       <Box as="section" id="about_me_page_section" pt={40} pb={20}>
-        <Box maxWidth={1400} mx="auto">
+        <Box maxWidth={1400} mx={{ base: "5%", "2xl": "auto" }}>
           <BackgroundText text="About Me" />
-          <Flex>
+          <Flex flexDirection={{ base: "column", sm: "row" }}>
             <Photo />
             <Career jobs={career} />
           </Flex>
         </Box>
       </Box>
-      <Box as="section" py={16}>
-        {/* <Box maxWidth={1400} mx="auto"> */}
+      <Box as="section">
         <MarqueeSlider>
           {allTechItems.map((item) => (
             <Image
@@ -51,7 +51,9 @@ export default async function About() {
             />
           ))}
         </MarqueeSlider>
-        {/* </Box> */}
+      </Box>
+      <Box as="section">
+        <Education />
       </Box>
     </>
   );

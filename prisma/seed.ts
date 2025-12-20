@@ -30,6 +30,52 @@ const userData: Prisma.UserCreateInput[] = [
         },
       ],
     },
+    certificates: {
+      create: [
+        {
+          title: "JavaScript",
+          imageUrl:
+            "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_javascript.png",
+          category: "FRONTEND",
+        },
+        {
+          title: "TypeScript",
+          imageUrl:
+            "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_typescript.png",
+          category: "FRONTEND",
+        },
+        {
+          title: "Tailwind CSS",
+          imageUrl:
+            "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_tailwind.png",
+          category: "FRONTEND",
+        },
+        {
+          title: "Tricky Javascript",
+          imageUrl:
+            "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_tricky_javascript.png",
+          category: "FRONTEND",
+        },
+        {
+          title: "React",
+          imageUrl:
+            "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_react.png",
+          category: "FRONTEND",
+        },
+        {
+          title: "Advanced React",
+          imageUrl:
+            "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_advanced_react.png",
+          category: "FRONTEND",
+        },
+        {
+          title: "Responsive Design",
+          imageUrl:
+            "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_responsive_design.png",
+          category: "FRONTEND",
+        },
+      ],
+    },
   },
 ];
 

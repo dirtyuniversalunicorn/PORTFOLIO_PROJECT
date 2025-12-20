@@ -7,7 +7,13 @@ export type MarqueeSliderProps = {
 
 export const MarqueeSlider = ({ children }: MarqueeSliderProps) => {
   return (
-    <Marquee autoFill pauseOnHover speed={50}>
+    <Marquee
+      autoFill
+      speed={50}
+      gradient
+      gradientColor="#0e1011"
+      className="h-28"
+    >
       {children}
     </Marquee>
   );

@@ -18,12 +18,19 @@ enum Role {
   USER
 }
 
+enum Category {
+  FRONTEND
+  BACKEND
+  OTHER
+}
+
 model User {
-  id       Int       @id @default(autoincrement())
-  email    String    @unique
-  name     String?
-  role     Role      @default(USER)
-  projects Project[]
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  name         String?
+  role         Role          @default(USER)
+  projects     Project[]
+  certificates Certificate[]
 }
 
 model Project {
@@ -36,4 +43,13 @@ model Project {
   websiteUrl       String
   authorId         Int
   author           User     @relation(fields: [authorId], references: [id])
+}
+
+model Certificate {
+  id       Int      @id @default(autoincrement())
+  category Category
+  title    String
+  imageUrl String
+  authorId Int
+  author   User     @relation(fields: [authorId], references: [id])
 }
