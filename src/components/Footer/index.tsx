@@ -19,7 +19,7 @@ export const Footer = () => {
           letterSpacing={1.61}
         />
         <Grid
-          gridTemplateRows="repeat(2, auto)"
+          gridTemplateRows="repeat(3, auto)"
           maxWidth={1400}
           my="auto"
           height="auto"
@@ -27,11 +27,11 @@ export const Footer = () => {
         >
           <FooterCTAGrid />
           <FooterGrid />
+          <Suspense>
+            <LastBand />
+          </Suspense>
         </Grid>
       </Stack>
-      <Suspense>
-        <LastBand />
-      </Suspense>
     </Stack>
   );
 };

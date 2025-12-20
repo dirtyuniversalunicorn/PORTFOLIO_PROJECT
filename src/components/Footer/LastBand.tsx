@@ -4,14 +4,7 @@ import { CurrentYear } from "./CurrentYear";
 
 export const LastBand = () => {
   return (
-    <Flex
-      position="absolute"
-      textAlign="center"
-      justifyContent="center"
-      bottom={0}
-      mx="auto"
-      width="100%"
-    >
+    <Flex textAlign="center" justifyContent="center" bottom={0} mx="auto">
       <Text>
         ©<CurrentYear /> Designed by{" "}
         <Link href="https://www.behance.net/swifttech03" target="_blank">
