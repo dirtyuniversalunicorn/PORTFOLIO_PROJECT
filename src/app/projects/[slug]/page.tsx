@@ -2,12 +2,21 @@ import { Suspense } from "react";
 import { Stack } from "@chakra-ui/react";
 import { SkeletonProjectDetail } from "@/components/Skeletons/SkeletonProjectDetail";
 import { Project } from "./components/Project";
+import prisma from "@/lib/prisma";
 
-export default async function ProjectDetail({
+export async function generateStaticParams() {
+  const projects = await prisma.project.findMany({
+    select: { slug: true },
+  });
+
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export default async function ProjectsDetail({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+}: PageProps<"/projects/[slug]">) {
   const { slug } = await params;
 
   return (

@@ -1,11 +1,8 @@
-"use client";
-
 import { Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { CurrentYear } from "./CurrentYear";
 
 export const LastBand = () => {
-  const year = new Date().getFullYear();
-
   return (
     <Flex
       position="absolute"
@@ -16,7 +13,7 @@ export const LastBand = () => {
       width="100%"
     >
       <Text>
-        ©{year} Designed by{" "}
+        ©<CurrentYear /> Designed by{" "}
         <Link href="https://www.behance.net/swifttech03" target="_blank">
           Naeem
         </Link>

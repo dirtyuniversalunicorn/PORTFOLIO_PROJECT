@@ -19,6 +19,7 @@ const userData: Prisma.UserCreateInput[] = [
       create: [
         {
           title: "Dock Appointment Scheduling System",
+          slug: "dock-appointment-scheduling-system",
           shortDescription: "This is short description",
           longDescription: "This is loooooooooooooooong description",
           technologies: ["nextjs", "ant design", "tailwind css"],

@@ -4,12 +4,19 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { Box, Text } from "@chakra-ui/react";
 import prisma from "@/lib/prisma";
+import { generateSlug } from "@/utils/generateSlug";
 
 export default function UploadProjectForm() {
   async function createProject(formData: FormData) {
     "use server";
 
     const title = formData.get("project_title") as string;
+
+    if (typeof title !== "string") {
+      throw new Error("Project title is required");
+    }
+
+    const slug = generateSlug(title);
     const websiteUrl = formData.get("website_url") as string;
     const shortDescription = formData.get("short_description") as string;
     const longDescription = formData.get("long_description") as string;
@@ -49,6 +56,7 @@ export default function UploadProjectForm() {
     await prisma.project.create({
       data: {
         title,
+        slug,
         websiteUrl,
         shortDescription,
         longDescription,

@@ -3,13 +3,12 @@ import { Grid } from "@chakra-ui/react";
 import { notFound } from "next/navigation";
 import { Carousel } from "@/components/Carousel";
 import { ProjectCharacteristics } from "./ProjectCharacteristics";
-import { sleep } from "@/utils/sleep";
 
 export async function Project({ slug }: { slug: string }) {
-  await sleep(2000);
+  "use cache";
   const projectDetails = await prisma.project.findUnique({
     where: {
-      id: Number(slug),
+      slug: slug,
     },
   });
 

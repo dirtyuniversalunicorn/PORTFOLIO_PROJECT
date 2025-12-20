@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import { sleep } from "@/utils/sleep";
 import { Badge, Link, List, Wrap, Text } from "@chakra-ui/react";
 
 export type ProjectDataProps = {
@@ -7,7 +6,7 @@ export type ProjectDataProps = {
 };
 
 export async function ProjectsData({ limit }: ProjectDataProps) {
-  await sleep(2000);
+  "use cache";
   const projects = await prisma.project.findMany();
   const visibleProjects = limit === "all" ? projects : projects.slice(0, limit);
 
@@ -25,7 +24,7 @@ export async function ProjectsData({ limit }: ProjectDataProps) {
               <Badge key={technology}>{technology}</Badge>
             ))}
           </Wrap>
-          <Link href={`/projects/${project.id}`}>
+          <Link href={`/projects/${project.slug}`}>
             <Text as="span" fontSize="3xl" fontWeight={700}>
               {project.title}
             </Text>

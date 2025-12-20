@@ -1,3 +1,10 @@
-// TODO
-// function for creating slug name of the dynamicaly generated page
-// take the title of the project, remove all diacritics, and replace all the spaces with dashes, toLowerCase, no special characters: !:_? etc
+export const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+};

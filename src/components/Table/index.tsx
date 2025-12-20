@@ -6,6 +6,5 @@ export const Table = async () => {
   await sleep(2000);
   const projects = await prisma.project.findMany();
 
-  console.log("Table items: ", projects);
   return <TableClient projects={projects} />;
 };

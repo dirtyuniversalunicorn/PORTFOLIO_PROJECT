@@ -39,8 +39,6 @@ export const ProgressIndicator = () => {
 
   if (!isScrollable) return null;
 
-  console.log("click");
-
   return (
     <Progress.Root
       value={progress}
