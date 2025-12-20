@@ -9,7 +9,6 @@ export const MarqueeSlider = ({ children }: MarqueeSliderProps) => {
   return (
     <Marquee
       autoFill
-      pauseOnHover
       speed={50}
       gradient
       gradientColor="#0e1011"
