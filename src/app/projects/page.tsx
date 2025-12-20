@@ -12,7 +12,6 @@ export default async function Projects() {
       gap={10}
       maxWidth={1400}
       mx={{ base: "5%", "2xl": "auto" }}
-      height="100vh"
     >
       <BackgroundText text="Projects" />
 
