@@ -3,6 +3,7 @@ import { LastBand } from "./LastBand";
 import { FooterGrid } from "./FooterGrid";
 import { FooterCTAGrid } from "./FooterCTAGrid";
 import { FooterTitle } from "./FooterTitle";
+import { Suspense } from "react";
 
 // TODO flex + column nahrad za stack
 
@@ -28,7 +29,9 @@ export const Footer = () => {
           <FooterGrid />
         </Grid>
       </Stack>
-      <LastBand />
+      <Suspense>
+        <LastBand />
+      </Suspense>
     </Stack>
   );
 };
