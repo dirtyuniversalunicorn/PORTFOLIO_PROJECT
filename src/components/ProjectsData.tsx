@@ -1,14 +1,14 @@
-import type { ProjectProps } from "@/types/ProjectsProps";
-import { List, Wrap, Text, Badge } from "@chakra-ui/react";
-import Link from "next/link";
+import prisma from "@/lib/prisma";
+import { sleep } from "@/utils/sleep";
+import { Badge, Link, List, Wrap, Text } from "@chakra-ui/react";
 
-// TODO Types
-export type ProjectListProps = {
-  projects: ProjectProps[];
+export type ProjectDataProps = {
   limit?: number | "all";
 };
 
-export const ProjectList = ({ projects, limit }: ProjectListProps) => {
+export async function ProjectsData({ limit }: ProjectDataProps) {
+  await sleep(2000);
+  const projects = await prisma.project.findMany();
   const visibleProjects = limit === "all" ? projects : projects.slice(0, limit);
 
   return (
@@ -37,4 +37,4 @@ export const ProjectList = ({ projects, limit }: ProjectListProps) => {
       ))}
     </List.Root>
   );
-};
+}

@@ -1,10 +1,9 @@
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
-import prisma from "@/lib/prisma";
-import { ProjectList } from "./ProjectList";
+import { ProjectsData } from "@/components/ProjectsData";
+import { Suspense } from "react";
+import { SectionSkeleton } from "../Skeletons/SkeletonSection";
 
 export const ProjectsSection = async () => {
-  const projects = await prisma.project.findMany();
-
   return (
     <Box id="section_portfolios" as="section" py={36}>
       <Flex
@@ -29,7 +28,9 @@ export const ProjectsSection = async () => {
             Projects
           </Text>
         </Grid>
-        <ProjectList projects={projects} limit={3} />
+        <Suspense fallback={<SectionSkeleton />}>
+          <ProjectsData limit="all" />
+        </Suspense>
       </Flex>
     </Box>
   );

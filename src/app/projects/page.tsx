@@ -1,20 +1,24 @@
 import { BackgroundText } from "@/components/BackgroundText";
-import { ProjectList } from "@/components/ProjectsSection/ProjectList";
-import prisma from "@/lib/prisma";
 import { Stack } from "@chakra-ui/react";
+import { Suspense } from "react";
+import { ProjectsData } from "../../components/ProjectsData";
+import { Skeleton } from "@/components/Skeletons/Skeleton";
 
 export default async function Projects() {
-  const projects = await prisma.project.findMany();
   return (
     <Stack
       as="section"
       py={40}
       gap={10}
       maxWidth={1400}
-      mx={{ base: "5%", lg: "auto" }}
+      mx={{ base: "5%", "2xl": "auto" }}
+      height="100vh"
     >
       <BackgroundText text="Projects" />
-      <ProjectList projects={projects} limit="all" />
+
+      <Suspense fallback={<Skeleton />}>
+        <ProjectsData limit="all" />
+      </Suspense>
     </Stack>
   );
 }

@@ -1,10 +1,9 @@
 import { Photo } from "@/components/AboutSection/Photo";
 import { BackgroundText } from "@/components/BackgroundText";
 import { Career } from "@/components/Career";
-import { InfiniteSlider } from "@/components/InfiniteSlider";
-import { Section } from "@/components/Section";
+import { MarqueeSlider } from "@/components/Marquee";
 import { techStackItems } from "@/constants/techStackItems";
-import { Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 
 const career = [
   {
@@ -30,24 +29,30 @@ const career = [
 export default async function About() {
   const allTechItems = techStackItems.flatMap((category) => category.items);
   return (
-    <Section>
-      <BackgroundText text="About Me" />
-      <Flex>
-        <Photo />
-        <Career jobs={career} />
-      </Flex>
-
-      <InfiniteSlider
-        speed={35}
-        items={allTechItems.map((item) => (
-          <Image
-            key={item.index}
-            src={item.imagePath}
-            opacity={0.5}
-            _hover={{ opacity: 1 }}
-          />
-        ))}
-      />
-    </Section>
+    <>
+      <Box as="section" id="about_me_page_section" pt={40} pb={20}>
+        <Box maxWidth={1400} mx="auto">
+          <BackgroundText text="About Me" />
+          <Flex>
+            <Photo />
+            <Career jobs={career} />
+          </Flex>
+        </Box>
+      </Box>
+      <Box as="section" py={16}>
+        {/* <Box maxWidth={1400} mx="auto"> */}
+        <MarqueeSlider>
+          {allTechItems.map((item) => (
+            <Image
+              key={item.index}
+              src={item.imagePath}
+              opacity={0.5}
+              _hover={{ opacity: 1 }}
+            />
+          ))}
+        </MarqueeSlider>
+        {/* </Box> */}
+      </Box>
+    </>
   );
 }

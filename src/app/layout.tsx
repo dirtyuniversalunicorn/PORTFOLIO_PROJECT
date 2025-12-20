@@ -5,6 +5,7 @@ import { Provider } from "@/components/ui/provider";
 import { Navigation } from "@/components/Navigation";
 import { ProgressIndicator } from "@/components/ProgressIndicator.tsx";
 import { Footer } from "@/components/Footer";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +34,9 @@ export default function RootLayout({
       >
         <Provider>
           <Navigation />
-          <ProgressIndicator />
+          <Suspense>
+            <ProgressIndicator />
+          </Suspense>
           {children}
           <Footer />
         </Provider>
