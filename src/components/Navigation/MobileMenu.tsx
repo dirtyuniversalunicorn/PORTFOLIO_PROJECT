@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Text,
-  Menu,
-  Portal as ChakraPortal,
-  CloseButton,
-  Drawer,
-  Portal,
-  VStack,
-} from "@chakra-ui/react";
+import { Text, Drawer, Portal, VStack } from "@chakra-ui/react";
 import { Button } from "../Button.tsx";
 import Hamburger from "hamburger-react";
 import { useState } from "react";
