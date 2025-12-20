@@ -2,9 +2,9 @@ import { Photo } from "@/components/AboutSection/Photo";
 import { BackgroundText } from "@/components/BackgroundText";
 import { Career } from "@/components/Career";
 import { Education } from "@/components/Education";
-import { MarqueeSlider } from "@/components/Marquee";
-import { techStackItems } from "@/constants/techStackItems";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Marquee } from "@/components/Marquee";
+import { Box, Flex } from "@chakra-ui/react";
+import { Suspense } from "react";
 
 const career = [
   {
@@ -28,7 +28,6 @@ const career = [
 ];
 
 export default async function About() {
-  const allTechItems = techStackItems.flatMap((category) => category.items);
   return (
     <>
       <Box as="section" id="about_me_page_section" pt={40} pb={20}>
@@ -41,16 +40,9 @@ export default async function About() {
         </Box>
       </Box>
       <Box as="section">
-        <MarqueeSlider>
-          {allTechItems.map((item) => (
-            <Image
-              key={item.index}
-              src={item.imagePath}
-              opacity={0.5}
-              _hover={{ opacity: 1 }}
-            />
-          ))}
-        </MarqueeSlider>
+        <Suspense fallback="Loading your tech stack.">
+          <Marquee />
+        </Suspense>
       </Box>
       <Box as="section">
         <Education />
