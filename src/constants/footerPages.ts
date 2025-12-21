@@ -1,1 +1,1 @@
-export const footerPages = ["about", "services", "portfolio", "testimonials"];
+export const footerPages = ["about", "portfolio", "testimonials"];

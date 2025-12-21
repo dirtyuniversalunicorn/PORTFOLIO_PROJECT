@@ -1,9 +1,9 @@
-import { Stack, Grid } from "@chakra-ui/react";
-import { LastBand } from "./LastBand";
-import { FooterGrid } from "./FooterGrid";
-import { FooterCTAGrid } from "./FooterCTAGrid";
-import { FooterTitle } from "./FooterTitle";
+import { Grid, Stack } from "@chakra-ui/react";
 import { Suspense } from "react";
+import { FooterCTAGrid } from "./FooterCTAGrid";
+import { FooterGrid } from "./FooterGrid";
+import { FooterTitle } from "./FooterTitle";
+import { LastBand } from "./LastBand";
 
 // TODO flex + column nahrad za stack
 
@@ -23,7 +23,7 @@ export const Footer = () => {
           maxWidth={1400}
           my="auto"
           height="auto"
-          gap={{ base: 10, md: 36 }}
+          gap={{ base: 10, md: 20 }}
         >
           <FooterCTAGrid />
           <FooterGrid />
