@@ -1,5 +1,10 @@
-import { Prisma, PrismaClient, Role } from "@/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import {
+  Category,
+  type Prisma,
+  PrismaClient,
+  Role,
+} from "@/generated/prisma/client";
 import "dotenv/config";
 
 const adapter = new PrismaPg({
@@ -37,43 +42,43 @@ const userData: Prisma.UserCreateInput[] = [
           title: "JavaScript",
           imageUrl:
             "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_javascript.png",
-          category: "FRONTEND",
+          category: Category.FRONTEND,
         },
         {
           title: "TypeScript",
           imageUrl:
             "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_typescript.png",
-          category: "FRONTEND",
+          category: Category.FRONTEND,
         },
         {
           title: "Tailwind CSS",
           imageUrl:
             "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_tailwind.png",
-          category: "FRONTEND",
+          category: Category.FRONTEND,
         },
         {
           title: "Tricky Javascript",
           imageUrl:
             "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_tricky_javascript.png",
-          category: "FRONTEND",
+          category: Category.FRONTEND,
         },
         {
           title: "React",
           imageUrl:
             "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_react.png",
-          category: "FRONTEND",
+          category: Category.FRONTEND,
         },
         {
           title: "Advanced React",
           imageUrl:
             "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_advanced_react.png",
-          category: "FRONTEND",
+          category: Category.FRONTEND,
         },
         {
           title: "Responsive Design",
           imageUrl:
             "https://pub-5a14200f009840f0812f58a1a3bb7064.r2.dev/certificates/cert_responsive_design.png",
-          category: "FRONTEND",
+          category: Category.FRONTEND,
         },
       ],
     },

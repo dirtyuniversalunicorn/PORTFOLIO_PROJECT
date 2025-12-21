@@ -1,12 +1,10 @@
-import { Box } from "@chakra-ui/react";
-import { UploadProject } from "../../../components/UploadProject";
+import { Suspense } from "react";
+import { NewProject } from "./NewProject";
 
-export default async function NewProject() {
+export default async function NewProjectPage() {
   return (
-    <Box as="section" py={40}>
-      <Box maxWidth={1400} mx="auto">
-        <UploadProject />
-      </Box>
-    </Box>
+    <Suspense>
+      <NewProject />
+    </Suspense>
   );
 }

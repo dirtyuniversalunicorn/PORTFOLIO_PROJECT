@@ -1,10 +1,10 @@
-import Form from "next/form";
-import { FormInput } from "../ContactForm.tsx/FormInput";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { Box, Text } from "@chakra-ui/react";
+import { revalidatePath } from "next/cache";
+import Form from "next/form";
+import { redirect } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { generateSlug } from "@/utils/generateSlug";
+import { FormInput } from "../ContactForm.tsx/FormInput";
 
 export default function UploadProjectForm() {
   async function createProject(formData: FormData) {
@@ -62,7 +62,7 @@ export default function UploadProjectForm() {
         longDescription,
         technologies,
         imageUrl: uploadedImageUrls,
-        authorId: 1,
+        authorId: "cmjfqivfk0000ocoe4vqm3wdt",
       },
     });
 

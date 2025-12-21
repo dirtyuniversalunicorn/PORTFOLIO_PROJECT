@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Provider } from "@/components/ui/provider";
+import { Suspense } from "react";
+import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { ProgressIndicator } from "@/components/ProgressIndicator.tsx";
-import { Footer } from "@/components/Footer";
-import { Suspense } from "react";
+import { Provider } from "@/components/ui/provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +33,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Provider>
-          <Navigation />
+          <Suspense>
+            <Navigation />
+          </Suspense>
           <Suspense>
             <ProgressIndicator />
           </Suspense>

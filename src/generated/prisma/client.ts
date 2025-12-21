@@ -54,3 +54,18 @@ export type Project = Prisma.ProjectModel
  * 
  */
 export type Certificate = Prisma.CertificateModel
+/**
+ * Model Session
+ * 
+ */
+export type Session = Prisma.SessionModel
+/**
+ * Model Account
+ * 
+ */
+export type Account = Prisma.AccountModel
+/**
+ * Model Verification
+ * 
+ */
+export type Verification = Prisma.VerificationModel

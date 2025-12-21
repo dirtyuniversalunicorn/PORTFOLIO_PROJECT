@@ -1,5 +1,5 @@
-import type { ButtonProps } from "@/types/ButtonProps";
 import { Button as ChakraButton } from "@chakra-ui/react";
+import type { ButtonProps } from "@/types/ButtonProps";
 
 export const Button = ({ buttonTitle, ...props }: ButtonProps) => {
   return (

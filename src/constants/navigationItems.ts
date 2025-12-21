@@ -1,6 +1,1 @@
-export const navigationItems: string[] = [
-  "projects",
-  "services",
-  "about",
-  "reviews",
-];
+export const navigationItems: string[] = ["projects", "about", "reviews"];
