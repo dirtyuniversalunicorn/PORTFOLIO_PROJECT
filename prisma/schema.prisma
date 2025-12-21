@@ -25,7 +25,7 @@ enum Category {
 }
 
 model User {
-  id            Int           @id @default(autoincrement())
+  id            String        @id @default(cuid())
   email         String        @unique
   name          String?
   role          Role          @default(USER)
@@ -42,7 +42,7 @@ model User {
 }
 
 model Project {
-  id               Int      @id @default(autoincrement())
+  id               String   @id @default(cuid())
   title            String
   slug             String   @unique
   shortDescription String
@@ -50,7 +50,7 @@ model Project {
   technologies     String[]
   imageUrl         String[]
   websiteUrl       String
-  authorId         Int
+  authorId         String
   author           User     @relation(fields: [authorId], references: [id])
 }
 
@@ -59,7 +59,7 @@ model Certificate {
   category Category
   title    String
   imageUrl String
-  authorId Int
+  authorId String
   author   User     @relation(fields: [authorId], references: [id])
 }
 
@@ -72,7 +72,7 @@ model Session {
   updatedAt DateTime @updatedAt
   ipAddress String?
   userAgent String?
-  userId    Int
+  userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([token])
@@ -84,7 +84,7 @@ model Account {
   id                    String    @id
   accountId             String
   providerId            String
-  userId                Int
+  userId                String
   user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   accessToken           String?
   refreshToken          String?

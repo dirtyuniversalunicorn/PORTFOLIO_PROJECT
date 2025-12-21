@@ -28,12 +28,10 @@ export type AggregateCertificate = {
 
 export type CertificateAvgAggregateOutputType = {
   id: number | null
-  authorId: number | null
 }
 
 export type CertificateSumAggregateOutputType = {
   id: number | null
-  authorId: number | null
 }
 
 export type CertificateMinAggregateOutputType = {
@@ -41,7 +39,7 @@ export type CertificateMinAggregateOutputType = {
   category: $Enums.Category | null
   title: string | null
   imageUrl: string | null
-  authorId: number | null
+  authorId: string | null
 }
 
 export type CertificateMaxAggregateOutputType = {
@@ -49,7 +47,7 @@ export type CertificateMaxAggregateOutputType = {
   category: $Enums.Category | null
   title: string | null
   imageUrl: string | null
-  authorId: number | null
+  authorId: string | null
 }
 
 export type CertificateCountAggregateOutputType = {
@@ -64,12 +62,10 @@ export type CertificateCountAggregateOutputType = {
 
 export type CertificateAvgAggregateInputType = {
   id?: true
-  authorId?: true
 }
 
 export type CertificateSumAggregateInputType = {
   id?: true
-  authorId?: true
 }
 
 export type CertificateMinAggregateInputType = {
@@ -188,7 +184,7 @@ export type CertificateGroupByOutputType = {
   category: $Enums.Category
   title: string
   imageUrl: string
-  authorId: number
+  authorId: string
   _count: CertificateCountAggregateOutputType | null
   _avg: CertificateAvgAggregateOutputType | null
   _sum: CertificateSumAggregateOutputType | null
@@ -219,7 +215,7 @@ export type CertificateWhereInput = {
   category?: Prisma.EnumCategoryFilter<"Certificate"> | $Enums.Category
   title?: Prisma.StringFilter<"Certificate"> | string
   imageUrl?: Prisma.StringFilter<"Certificate"> | string
-  authorId?: Prisma.IntFilter<"Certificate"> | number
+  authorId?: Prisma.StringFilter<"Certificate"> | string
   author?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
@@ -240,7 +236,7 @@ export type CertificateWhereUniqueInput = Prisma.AtLeast<{
   category?: Prisma.EnumCategoryFilter<"Certificate"> | $Enums.Category
   title?: Prisma.StringFilter<"Certificate"> | string
   imageUrl?: Prisma.StringFilter<"Certificate"> | string
-  authorId?: Prisma.IntFilter<"Certificate"> | number
+  authorId?: Prisma.StringFilter<"Certificate"> | string
   author?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id">
 
@@ -265,7 +261,7 @@ export type CertificateScalarWhereWithAggregatesInput = {
   category?: Prisma.EnumCategoryWithAggregatesFilter<"Certificate"> | $Enums.Category
   title?: Prisma.StringWithAggregatesFilter<"Certificate"> | string
   imageUrl?: Prisma.StringWithAggregatesFilter<"Certificate"> | string
-  authorId?: Prisma.IntWithAggregatesFilter<"Certificate"> | number
+  authorId?: Prisma.StringWithAggregatesFilter<"Certificate"> | string
 }
 
 export type CertificateCreateInput = {
@@ -280,7 +276,7 @@ export type CertificateUncheckedCreateInput = {
   category: $Enums.Category
   title: string
   imageUrl: string
-  authorId: number
+  authorId: string
 }
 
 export type CertificateUpdateInput = {
@@ -295,7 +291,7 @@ export type CertificateUncheckedUpdateInput = {
   category?: Prisma.EnumCategoryFieldUpdateOperationsInput | $Enums.Category
   title?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  authorId?: Prisma.IntFieldUpdateOperationsInput | number
+  authorId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type CertificateCreateManyInput = {
@@ -303,7 +299,7 @@ export type CertificateCreateManyInput = {
   category: $Enums.Category
   title: string
   imageUrl: string
-  authorId: number
+  authorId: string
 }
 
 export type CertificateUpdateManyMutationInput = {
@@ -317,7 +313,7 @@ export type CertificateUncheckedUpdateManyInput = {
   category?: Prisma.EnumCategoryFieldUpdateOperationsInput | $Enums.Category
   title?: Prisma.StringFieldUpdateOperationsInput | string
   imageUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  authorId?: Prisma.IntFieldUpdateOperationsInput | number
+  authorId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type CertificateListRelationFilter = {
@@ -340,7 +336,6 @@ export type CertificateCountOrderByAggregateInput = {
 
 export type CertificateAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  authorId?: Prisma.SortOrder
 }
 
 export type CertificateMaxOrderByAggregateInput = {
@@ -361,7 +356,6 @@ export type CertificateMinOrderByAggregateInput = {
 
 export type CertificateSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  authorId?: Prisma.SortOrder
 }
 
 export type CertificateCreateNestedManyWithoutAuthorInput = {
@@ -408,6 +402,14 @@ export type CertificateUncheckedUpdateManyWithoutAuthorNestedInput = {
 
 export type EnumCategoryFieldUpdateOperationsInput = {
   set?: $Enums.Category
+}
+
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
 export type CertificateCreateWithoutAuthorInput = {
@@ -457,7 +459,7 @@ export type CertificateScalarWhereInput = {
   category?: Prisma.EnumCategoryFilter<"Certificate"> | $Enums.Category
   title?: Prisma.StringFilter<"Certificate"> | string
   imageUrl?: Prisma.StringFilter<"Certificate"> | string
-  authorId?: Prisma.IntFilter<"Certificate"> | number
+  authorId?: Prisma.StringFilter<"Certificate"> | string
 }
 
 export type CertificateCreateManyAuthorInput = {
@@ -545,7 +547,7 @@ export type $CertificatePayload<ExtArgs extends runtime.Types.Extensions.Interna
     category: $Enums.Category
     title: string
     imageUrl: string
-    authorId: number
+    authorId: string
   }, ExtArgs["result"]["certificate"]>
   composites: {}
 }
@@ -974,7 +976,7 @@ export interface CertificateFieldRefs {
   readonly category: Prisma.FieldRef<"Certificate", 'Category'>
   readonly title: Prisma.FieldRef<"Certificate", 'String'>
   readonly imageUrl: Prisma.FieldRef<"Certificate", 'String'>
-  readonly authorId: Prisma.FieldRef<"Certificate", 'Int'>
+  readonly authorId: Prisma.FieldRef<"Certificate", 'String'>
 }
     
 

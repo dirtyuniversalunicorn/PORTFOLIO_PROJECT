@@ -1,6 +1,8 @@
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { redirect } from "next/navigation";
+import { Role } from "@/generated/prisma/enums";
+import { getSession, hasPermission } from "@/lib/dal";
 
-// create client
 const s3 = new S3Client({
   region: "auto",
   endpoint: process.env.R2_ENDPOINT,
@@ -11,6 +13,13 @@ const s3 = new S3Client({
 });
 
 export async function POST(req: Request) {
+  const session = await getSession();
+  const isAdmin = await hasPermission([Role.ADMIN]);
+
+  if (!session || !isAdmin) {
+    redirect("/");
+  }
+
   const formData = await req.formData();
   const file = formData.get("file") as File;
 

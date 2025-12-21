@@ -1,14 +1,18 @@
 "use client";
 
-import { Text, Drawer, Portal, VStack } from "@chakra-ui/react";
-import { Button } from "../Button.tsx";
+import { Drawer, Portal, Text, VStack } from "@chakra-ui/react";
 import Hamburger from "hamburger-react";
-import { useState } from "react";
-import type { NavigationListProps } from "@/types/NavigationListProps";
 import Link from "next/link";
+import { useState } from "react";
+import { LoginButton } from "@/app/(auth)/login/components/LoginButton";
+import { LogoutButton } from "@/app/(auth)/login/components/LogoutButton";
+import { authClient } from "@/lib/auth-client";
+import type { NavigationListProps } from "@/types/NavigationListProps";
+import { Button } from "../Button.tsx";
 
 export const MobileMenu = ({ navigationItems }: NavigationListProps) => {
   const [isOpen, setOpen] = useState(false);
+  const { data: session } = authClient.useSession();
 
   return (
     <Drawer.Root
@@ -17,9 +21,8 @@ export const MobileMenu = ({ navigationItems }: NavigationListProps) => {
     >
       <Drawer.Trigger asChild padding="0">
         <Button
-          display={{ base: "block", md: "none" }}
+          display={{ base: "flex", md: "none" }}
           border="none"
-          zIndex={9999}
           variant="transparent"
           buttonTitle={
             <Hamburger size={40} toggled={isOpen} toggle={setOpen} />
@@ -32,7 +35,7 @@ export const MobileMenu = ({ navigationItems }: NavigationListProps) => {
         <Drawer.Positioner>
           <Drawer.Content backgroundColor="blackAlpha.900">
             <Drawer.Body>
-              <VStack alignItems="left" gapY={16} pt={20}>
+              <VStack alignItems="left" gapY={16} mt={20} zIndex={9998}>
                 {navigationItems.map((item) => (
                   <Link href={`/${item}`} key={item}>
                     <Drawer.CloseTrigger asChild unstyled>
@@ -41,7 +44,6 @@ export const MobileMenu = ({ navigationItems }: NavigationListProps) => {
                         textTransform="uppercase"
                         fontSize="4xl"
                         letterSpacing={1.61}
-                        // fontWeight={300}
                       >
                         {item}
                       </Text>
@@ -52,13 +54,26 @@ export const MobileMenu = ({ navigationItems }: NavigationListProps) => {
             </Drawer.Body>
 
             <Drawer.Footer>
-              <Link href="#footer_section" className="w-full">
-                <Button
-                  buttonTitle="Let's talk"
-                  onClick={() => setOpen(false)}
-                  width="100%"
-                />
-              </Link>
+              <VStack width="100%">
+                {session ? (
+                  <LogoutButton
+                    display={{ base: "flex", md: "none" }}
+                    width="100%"
+                  />
+                ) : (
+                  <LoginButton
+                    display={{ base: "flex", md: "none" }}
+                    onClick={() => setOpen(false)}
+                  />
+                )}
+                <Link href="#footer_section" className="w-full">
+                  <Button
+                    buttonTitle="Let's talk"
+                    onClick={() => setOpen(false)}
+                    width="100%"
+                  />
+                </Link>
+              </VStack>
             </Drawer.Footer>
           </Drawer.Content>
         </Drawer.Positioner>
