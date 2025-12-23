@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "author": "Jane Doe",
+    "contact": "janedoe@example.com",
+    "project": "Gallery of Art",
+    "testimonial": "Jaroslav was a great teammate on our art gallery website project. He helped build layouts and components from Figma designs and consistently delivered clean, well-structured code. He’s reliable, quick to learn, and easy to collaborate with."
+  },
+  {
+    "id": 2,
+    "author": "Jack Foe",
+    "contact": "jackfoe@example.com",
+    "project": "DASS",
+    "testimonial": "I had the pleasure of working with Jaroslav on the development of a website for an art gallery. He was responsible for creating several layouts and reusable components based on the provided designs. His work was well-structured, clean, and easy to integrate into the project. He showed a good eye for detail, communicated clearly, and was always open to feedback, which made collaboration smooth and efficient. His contribution played an important role in delivering a visually consistent and functional final website."
+  },
+  {
+    "id": 3,
+    "author": "Jane Doe",
+    "contact": "janedoe@example.com",
+    "project": "Gallery of Art",
+    "testimonial": "Jaroslav was a great teammate on our art gallery website project. He helped build layouts and components from Figma designs and consistently delivered clean, well-structured code. He’s reliable, quick to learn, and easy to collaborate with."
+  },
+  {
+    "id": 5,
+    "author": "Jack Foe",
+    "contact": "jackfoe@example.com",
+    "project": "DASS",
+    "testimonial": "I had the pleasure of working with Jaroslav on the development of a website for an art gallery. He was responsible for creating several layouts and reusable components based on the provided designs. His work was well-structured, clean, and easy to integrate into the project. He showed a good eye for detail, communicated clearly, and was always open to feedback, which made collaboration smooth and efficient. His contribution played an important role in delivering a visually consistent and functional final website."
+  },
+  {
+    "id": 6,
+    "author": "Jane Doe",
+    "contact": "janedoe@example.com",
+    "project": "Gallery of Art",
+    "testimonial": "Jaroslav was a great teammate on our art gallery website project. He helped build layouts and components from Figma designs and consistently delivered clean, well-structured code. He’s reliable, quick to learn, and easy to collaborate with."
+  },
+  {
+    "id": 7,
+    "author": "Jack Foe",
+    "contact": "jackfoe@example.com",
+    "project": "DASS",
+    "testimonial": "I had the pleasure of working with Jaroslav on the development of a website for an art gallery. He was responsible for creating several layouts and reusable components based on the provided designs. His work was well-structured, clean, and easy to integrate into the project. He showed a good eye for detail, communicated clearly, and was always open to feedback, which made collaboration smooth and efficient. His contribution played an important role in delivering a visually consistent and functional final website."
+  },
+  {
+    "id": 8,
+    "author": "Jane Doe",
+    "contact": "janedoe@example.com",
+    "project": "Gallery of Art",
+    "testimonial": "Jaroslav was a great teammate on our art gallery website project. He helped build layouts and components from Figma designs and consistently delivered clean, well-structured code. He’s reliable, quick to learn, and easy to collaborate with."
+  },
+  {
+    "id": 9,
+    "author": "Jack Foe",
+    "contact": "jackfoe@example.com",
+    "project": "DASS",
+    "testimonial": "I had the pleasure of working with Jaroslav on the development of a website for an art gallery. He was responsible for creating several layouts and reusable components based on the provided designs. His work was well-structured, clean, and easy to integrate into the project. He showed a good eye for detail, communicated clearly, and was always open to feedback, which made collaboration smooth and efficient. His contribution played an important role in delivering a visually consistent and functional final website."
+  }
+]
