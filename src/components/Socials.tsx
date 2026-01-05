@@ -1,12 +1,4 @@
-import {
-  Button,
-  Clipboard,
-  Flex,
-  Image,
-  Link,
-  Text,
-  Wrap,
-} from "@chakra-ui/react";
+import { Clipboard, Flex, Image, Link, Text, Wrap } from "@chakra-ui/react";
 import type { SocialsProps } from "@/types/AboutSectionProps";
 
 export const Socials = ({ socials, showTitle, ...props }: SocialsProps) => {

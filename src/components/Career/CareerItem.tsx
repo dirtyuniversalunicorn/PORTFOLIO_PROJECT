@@ -2,7 +2,7 @@ import { Text, Timeline } from "@chakra-ui/react";
 import { MdWorkOutline } from "react-icons/md";
 
 export type CareerItemProps = {
-  index: number;
+  index: string;
   title: string;
   description: string;
   text: string;
