@@ -1,24 +1,12 @@
 "use client";
 
-import {
-    Input,
-    Textarea,
-    Button,
-    Text,
-    Field,
-    Box,
-    Flex,
-    Spinner,
-} from "@chakra-ui/react";
+import { Input, Textarea, Button, Text, Field, Flex } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import { z } from "zod";
 import { ProgressMessageBar } from "./Progress";
 import { MAX_LETTERS } from "../../../portfolio.config";
 import { toaster } from "../ui/toaster";
 
-/* ---------------------------------------------
-   Zod schema
----------------------------------------------- */
 const contactSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
     email: z.string().email("Invalid email address"),
@@ -27,12 +15,8 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
-/* ---------------------------------------------
-   Component
----------------------------------------------- */
 export const ContactForm = () => {
     const formRef = useRef<HTMLFormElement>(null);
-
     const [loading, setLoading] = useState(false);
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
     const [errors, setErrors] = useState<

@@ -1,6 +1,7 @@
 import { Grid, Box, GridItem } from "@chakra-ui/react";
 import { FooterGridList } from "./FooterGridList";
 import { footerNecessities } from "@/constants/footerNecessities";
+import { footerPages } from "@/constants/footerPages";
 import { Socials } from "../Socials";
 import { socials } from "@/constants/socials";
 
