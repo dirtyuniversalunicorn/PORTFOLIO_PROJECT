@@ -1,9 +1,9 @@
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
 
 export const Photo = () => {
   return (
     <Box
-      display={{ base: "flex", md: "block" }}
+      display={{ base: "none", lg: "block" }}
       flexDirection={{ base: "column" }}
     >
       <Text

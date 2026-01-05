@@ -1,4 +1,4 @@
-import { Timeline, Text } from "@chakra-ui/react";
+import { Text, Timeline } from "@chakra-ui/react";
 import { MdWorkOutline } from "react-icons/md";
 
 export type CareerItemProps = {

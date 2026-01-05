@@ -1,5 +1,5 @@
 import { Flex, Timeline } from "@chakra-ui/react";
-import { CareerItem, CareerItemProps } from "./CareerItem";
+import { CareerItem, type CareerItemProps } from "./CareerItem";
 
 export type CareerProps = {
   jobs: any;
@@ -14,7 +14,7 @@ export const Career = ({ jobs }: CareerProps) => {
       gap={5}
       mt={12}
     >
-      <Timeline.Root>
+      <Timeline.Root size="lg">
         {jobs.map((job: CareerItemProps) => (
           <CareerItem key={job.index} {...job} />
         ))}

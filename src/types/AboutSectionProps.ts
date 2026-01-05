@@ -5,6 +5,7 @@ export type SocialItem = {
   index: number;
   name: string;
   url: string;
+  pictureUrl: string;
 };
 
 // Props for Socials component
