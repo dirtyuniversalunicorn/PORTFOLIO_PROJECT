@@ -5,7 +5,7 @@ import { Section } from "@/components/Section";
 export default function TestimonialsPage() {
   return (
     <Section>
-      <BackgroundText text="Reviews" />
+      <BackgroundText text="Testimonials" />
       <EmptyState
         text="No testimonials found"
         suggestion="Consider visiting later"
