@@ -1,5 +1,5 @@
 import { BackgroundText } from "@/components/BackgroundText";
-import { EmptyState } from "@/components/Empty";
+import { EmptyState } from "@/components/EmptyState";
 import { Section } from "@/components/Section";
 
 export default async function Reviews() {
