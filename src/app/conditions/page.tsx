@@ -2,8 +2,6 @@ import { Box, Heading, Text } from "@chakra-ui/react";
 import { BackgroundText } from "@/components/BackgroundText";
 import { Section } from "@/components/Section";
 
-export const runtime = "edge";
-
 export default function Conditions() {
   return (
     <Section>

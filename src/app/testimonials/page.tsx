@@ -2,8 +2,6 @@ import { BackgroundText } from "@/components/BackgroundText";
 import { EmptyState } from "@/components/EmptyState";
 import { Section } from "@/components/Section";
 
-export const runtime = "edge";
-
 export default function TestimonialsPage() {
   return (
     <Section>

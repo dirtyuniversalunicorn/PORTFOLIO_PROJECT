@@ -4,8 +4,6 @@ import { BackgroundText } from "@/components/BackgroundText";
 import { Skeleton } from "@/components/Skeletons/Skeleton";
 import { ProjectsData } from "../../components/ProjectsData";
 
-export const runtime = "edge";
-
 export default async function Projects() {
   return (
     <Stack
