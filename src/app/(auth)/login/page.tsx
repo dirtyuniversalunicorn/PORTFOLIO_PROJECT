@@ -3,6 +3,8 @@ import { FaGithubSquare } from "react-icons/fa";
 import { BackgroundText } from "@/components/BackgroundText";
 import { SingInForm } from "./components/SignInForm";
 
+export const runtime = "edge";
+
 export default function LoginPage() {
   return (
     <Stack

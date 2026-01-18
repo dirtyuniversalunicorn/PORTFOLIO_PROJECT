@@ -4,6 +4,8 @@ import { SkeletonProjectDetail } from "@/components/Skeletons/SkeletonProjectDet
 import prisma from "@/lib/prisma";
 import { Project } from "./components/Project";
 
+export const runtime = "edge";
+
 export async function generateStaticParams() {
   const projects = await prisma.project.findMany({
     select: { slug: true },

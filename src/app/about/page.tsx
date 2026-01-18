@@ -6,6 +6,8 @@ import { Career } from "@/components/Career";
 import { Education } from "@/components/Education";
 import { Marquee } from "@/components/Marquee";
 
+export const runtime = "edge";
+
 const career = [
   {
     index: "1",

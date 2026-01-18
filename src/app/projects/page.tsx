@@ -1,8 +1,10 @@
-import { BackgroundText } from "@/components/BackgroundText";
 import { Stack } from "@chakra-ui/react";
 import { Suspense } from "react";
-import { ProjectsData } from "../../components/ProjectsData";
+import { BackgroundText } from "@/components/BackgroundText";
 import { Skeleton } from "@/components/Skeletons/Skeleton";
+import { ProjectsData } from "../../components/ProjectsData";
+
+export const runtime = "edge";
 
 export default async function Projects() {
   return (
