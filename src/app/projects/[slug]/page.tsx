@@ -3,8 +3,6 @@ import { Suspense } from "react";
 import { SkeletonProjectDetail } from "@/components/Skeletons/SkeletonProjectDetail";
 import { Project } from "./components/Project";
 
-export const dynamic = "force-dynamic";
-
 export default async function ProjectsDetail({
   params,
 }: PageProps<"/projects/[slug]">) {
