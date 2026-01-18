@@ -1,7 +1,18 @@
 import { Stack } from "@chakra-ui/react";
 import { Suspense } from "react";
 import { SkeletonProjectDetail } from "@/components/Skeletons/SkeletonProjectDetail";
+import prisma from "@/lib/prisma";
 import { Project } from "./components/Project";
+
+export async function generateStaticParams() {
+  const projects = await prisma.project.findMany({
+    select: { slug: true },
+  });
+
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 export default async function ProjectsDetail({
   params,
