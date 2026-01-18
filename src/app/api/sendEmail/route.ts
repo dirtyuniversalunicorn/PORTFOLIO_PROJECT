@@ -1,17 +1,15 @@
 import { Resend } from "resend";
 import { EmailTemplate } from "@/components/ContactMeSection/EmailTemplate";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const secretKey = process.env.RECAPTCHA_SECRET_KEY;
-
 export async function POST(req: Request) {
   try {
-    const { name, email, message, token } = await req.json();
+    const apiKey = process.env.RESEND_API_KEY;
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
 
-    if (!name || !email || !message || !token) {
+    if (!apiKey) {
       return Response.json(
-        { error: "Missing required fields" },
-        { status: 400 },
+        { error: "RESEND_API_KEY not configured" },
+        { status: 500 },
       );
     }
 
@@ -22,9 +20,29 @@ export async function POST(req: Request) {
       );
     }
 
+    const resend = new Resend(apiKey);
+
+    const { name, email, message, token } = await req.json();
+
+    if (!name || !email || !message || !token) {
+      return Response.json(
+        { error: "Missing required fields" },
+        { status: 400 },
+      );
+    }
+
     const recaptchaRes = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`,
-      { method: "POST" },
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          secret: secretKey,
+          response: token,
+        }),
+      },
     );
 
     const recaptchaData = await recaptchaRes.json();
@@ -49,7 +67,8 @@ export async function POST(req: Request) {
     }
 
     return Response.json({ success: true, data });
-  } catch (error) {
+  } catch (err) {
+    console.error(err);
     return Response.json({ error: "Failed to send email" }, { status: 500 });
   }
 }
