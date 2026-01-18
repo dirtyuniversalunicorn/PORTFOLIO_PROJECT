@@ -1,7 +1,7 @@
 import { Grid, Stack } from "@chakra-ui/react";
+import { ContactForm } from "../ContactMeSection/Form";
 // import { ContactForm } from "../ContactForm.tsx/index";
 import { FooterTitle } from "./FooterTitle";
-import { ContactForm } from "../ContactMeSection/Form";
 
 export const FooterCTAGrid = () => {
   return (
@@ -26,7 +26,6 @@ export const FooterCTAGrid = () => {
           mt={{ base: "-2", md: "0" }}
         />
       </Stack>
-      {/* <ContactForm /> */}
       <ContactForm />
     </Grid>
   );

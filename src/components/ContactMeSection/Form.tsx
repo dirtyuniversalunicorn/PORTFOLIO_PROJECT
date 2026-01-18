@@ -2,6 +2,7 @@
 
 import { Button, Field, Flex, Input, Text, Textarea } from "@chakra-ui/react";
 import { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import type { z } from "zod";
 import { CONFIG } from "../../../portfolio.config";
 import { toaster } from "../ui/toaster";
@@ -12,15 +13,19 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<
     Partial<Record<keyof ContactFormData, string>>
   >({});
   const [message, setMessage] = useState("");
+  const [recaptchaError, setRecaptchaError] = useState("");
 
   const letters = message.length;
 
-  const sendEmailRequest = async (payload: ContactFormData) => {
+  const sendEmailRequest = async (
+    payload: ContactFormData & { token: string },
+  ) => {
     const res = await fetch("/api/sendEmail", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -39,6 +44,7 @@ export const ContactForm = () => {
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setErrors({});
+    setRecaptchaError("");
 
     if (!formRef.current) return;
 
@@ -62,27 +68,32 @@ export const ContactForm = () => {
       return;
     }
 
+    const token = recaptchaRef.current?.getValue();
+    if (!token) {
+      setRecaptchaError("Please verify that you are not a robot.");
+      return;
+    }
+
     setLoading(true);
 
-    toaster.promise(sendEmailRequest(result.data), {
-      loading: {
-        title: "",
-        description: "Sending message...",
-      },
-      success: {
-        title: "Message sent!",
-        description: "Your message was successfully sent.",
-      },
-      error: {
-        title: "Sending failed!",
-        description: "Something went wrong while sending the message.",
-      },
-    });
-
     try {
-      await sendEmailRequest(result.data);
+      toaster.promise(sendEmailRequest({ ...result.data, token }), {
+        loading: { title: "", description: "Sending message..." },
+        success: {
+          title: "Message sent!",
+          description: "Your message was successfully sent.",
+        },
+        error: {
+          title: "Sending failed!",
+          description: "Something went wrong while sending the message.",
+        },
+      });
+
       formRef.current.reset();
       setMessage("");
+      recaptchaRef.current?.reset();
+    } catch (err: any) {
+      toaster.error(err.message || "Failed to send message");
     } finally {
       setLoading(false);
     }
@@ -126,6 +137,13 @@ export const ContactForm = () => {
           </Field.HelperText>
         </Field.Root>
         {errors.message && <Text color="red.500">{errors.message}</Text>}
+
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY!}
+          ref={recaptchaRef}
+        />
+        {recaptchaError && <Text color="red.500">{recaptchaError}</Text>}
+
         <Button
           type="submit"
           loading={loading}
