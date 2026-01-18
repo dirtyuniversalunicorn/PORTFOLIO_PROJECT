@@ -2,23 +2,17 @@
 
 import { Button, Field, Flex, Input, Text, Textarea } from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import { z } from "zod";
+import type { z } from "zod";
 import { CONFIG } from "../../../portfolio.config";
 import { toaster } from "../ui/toaster";
+import { contactSchema } from "./contact.schema";
 import { ProgressMessageBar } from "./Progress";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export const ContactForm = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [errors, setErrors] = useState<
     Partial<Record<keyof ContactFormData, string>>
   >({});
@@ -77,11 +71,11 @@ export const ContactForm = () => {
       },
       success: {
         title: "Message sent!",
-        description: "Your email was successfully sent.",
+        description: "Your message was successfully sent.",
       },
       error: {
         title: "Sending failed!",
-        description: "Something went wrong while sending the email.",
+        description: "Something went wrong while sending the message.",
       },
     });
 
@@ -142,7 +136,6 @@ export const ContactForm = () => {
         >
           Send
         </Button>
-        {successMessage && <Text mt={3}>{successMessage}</Text>}
       </Flex>
     </form>
   );

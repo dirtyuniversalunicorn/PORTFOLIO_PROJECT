@@ -20,7 +20,7 @@ export const CareerItem = ({ title, description, text }: CareerItemProps) => {
       <Timeline.Content>
         <Timeline.Title textTransform="uppercase">{title}</Timeline.Title>
         <Timeline.Description color="white">{description}</Timeline.Description>
-        <Text textStyle="md" color="whiteAlpha.700">
+        <Text textStyle="md" color="whiteAlpha.800" lineHeight={2}>
           {text}
         </Text>
       </Timeline.Content>

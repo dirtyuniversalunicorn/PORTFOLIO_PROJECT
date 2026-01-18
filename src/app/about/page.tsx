@@ -1,29 +1,29 @@
+import { Box, Flex } from "@chakra-ui/react";
+import { Suspense } from "react";
 import { Photo } from "@/components/AboutSection/Photo";
 import { BackgroundText } from "@/components/BackgroundText";
 import { Career } from "@/components/Career";
 import { Education } from "@/components/Education";
 import { Marquee } from "@/components/Marquee";
-import { Box, Flex } from "@chakra-ui/react";
-import { Suspense } from "react";
 
 const career = [
   {
     index: "1",
-    title: "2024 - ongoing: K2 atmitec Olomouc",
+    title: "2025 - ongoing | K2 atmitec Olomouc",
     description: "Junior Programmer | Frontend Developer | Consultant",
-    text: "One of wide varienty activities was to provide support to clients/users of ERP system K2. Not only support, but also providing solutions to their needs, since every business is different.",
+    text: "Developed new functionalities for the K2 ERP system based on customer requirements. Performed analysis, provided consultations, and implemented technical solutions. Designed and implemented solutions using object-oriented programming (OOP). Provided troubleshooting and support for K2 e-shop solutions. Worked with Pascal/Delphi (OOP), HTML5, LESS, JavaScript, React, and Next.js. Managed code versioning with Git, worked with SQL databases, and tracked tasks using Jira.",
   },
   {
     index: "2",
-    title: "2023 - 2024: Freelance",
+    title: "2024 - 2025 | Freelance",
     description: "Frontend developer",
-    text: "Transition period between doing science and frontend development. Involved A LOT of learning and practicing of new skills.",
+    text: "Transition period from science to frontend development, involving extensive learning and hands-on practice of new skills.",
   },
   {
     index: "3",
-    title: "Molecular Biology Major",
-    description: "Scientist",
-    text: "Yes, science major.",
+    title: "2022 - 2024 | Doctoral Studies",
+    description: "Not finished.",
+    text: "Doctoral studies focusing on DNA repair mechanisms in the model organism Arabidopsis thaliana",
   },
 ];
 
