@@ -27,9 +27,6 @@ export const FormInput = ({
         />
       );
 
-    // TODO let the button be disable when there is no name or email or message
-    // TODO only after they are filled, enable button
-    // TODO add states: Pending, Failed, Success
     case submitButton:
       return (
         <ChakraInput
@@ -40,9 +37,6 @@ export const FormInput = ({
           {...props}
         />
       );
-
-    // add more cases here
-    // case ...:
 
     default:
       return (

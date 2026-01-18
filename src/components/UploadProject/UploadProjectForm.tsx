@@ -4,7 +4,7 @@ import Form from "next/form";
 import { redirect } from "next/navigation";
 import prisma from "@/lib/prisma";
 import { generateSlug } from "@/utils/generateSlug";
-import { FormInput } from "../ContactForm.tsx/FormInput";
+import { FormInput } from "../ContactForm/FormInput";
 
 export default function UploadProjectForm() {
   async function createProject(formData: FormData) {

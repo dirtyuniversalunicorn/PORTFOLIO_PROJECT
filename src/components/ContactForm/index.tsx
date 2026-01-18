@@ -1,6 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import Form from "next/form";
 import { FormInput } from "./FormInput";
+
 export const ContactForm = () => {
   return (
     <Box my="auto" pt={{ base: "3", lg: "20" }}>
