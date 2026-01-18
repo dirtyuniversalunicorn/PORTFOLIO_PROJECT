@@ -1,5 +1,4 @@
 "use client";
-// TODO this could be called Socials button
 import { Flex, Spinner, Text } from "@chakra-ui/react";
 import Form from "next/form";
 import { useState } from "react";
@@ -43,18 +42,17 @@ export const SingInForm = () => {
         }
         type="button"
         onClick={() => {
-          handleSocialSignIn("github"),
-            toaster.promise(handleSocialSignIn("github"), {
-              success: {
-                title: "Login success!",
-                description: "You were succesfully logged in.",
-              },
-              error: {
-                title: "Login failed!",
-                description: "Something wrong while trying to login.",
-              },
-              loading: { title: <Spinner />, description: "Please wait" },
-            });
+          toaster.promise(handleSocialSignIn("github"), {
+            success: {
+              title: "Login success!",
+              description: "You were succesfully logged in.",
+            },
+            error: {
+              title: "Login failed!",
+              description: "Something wrong while trying to login.",
+            },
+            loading: { title: <Spinner />, description: "Please wait" },
+          });
         }}
         py={6}
       />

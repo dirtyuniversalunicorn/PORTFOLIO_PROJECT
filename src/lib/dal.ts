@@ -27,7 +27,7 @@ export const getSession = cache(async () => {
 });
 
 export const hasPermission = async (
-  allowedRoles: Role[] = []
+  allowedRoles: Role[] = [],
 ): Promise<boolean> => {
   const session = await getSession();
 

@@ -41,7 +41,7 @@ export default function UploadProjectForm() {
           {
             method: "POST",
             body: formData,
-          }
+          },
         );
 
         if (!res.ok) {
@@ -50,7 +50,7 @@ export default function UploadProjectForm() {
 
         const { url } = await res.json();
         return url;
-      })
+      }),
     );
 
     await prisma.project.create({

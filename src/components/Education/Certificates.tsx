@@ -9,16 +9,16 @@ import { SkeletonCertificates } from "../Skeletons/SkeletonCertificates";
 // is there way to not double the information, since the same enum is used in prisma.schema
 
 export const Certificates = async () => {
-    let certificates: Certificate[] = [];
-    try {
-        certificates = await prisma.certificate.findMany();
-    } catch {
-        certificates = [];
-    }
-    return (
-        <>
-            <CertificatesClient certificates={certificates} />
-            {certificates.length === 0 && <SkeletonCertificates />}
-        </>
-    );
+  let certificates: Certificate[] = [];
+  try {
+    certificates = await prisma.certificate.findMany();
+  } catch {
+    certificates = [];
+  }
+  return (
+    <>
+      <CertificatesClient certificates={certificates} />
+      {certificates.length === 0 && <SkeletonCertificates />}
+    </>
+  );
 };

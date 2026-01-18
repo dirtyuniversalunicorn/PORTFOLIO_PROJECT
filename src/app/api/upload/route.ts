@@ -37,7 +37,7 @@ export async function POST(req: Request) {
       Key: key,
       Body: buffer,
       ContentType: file.type,
-    })
+    }),
   );
 
   return Response.json({
