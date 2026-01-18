@@ -20,6 +20,7 @@ export const Marquee = async () => {
             opacity={0.5}
             _hover={{ opacity: 1 }}
             transition="opacity 0.2s"
+            mx={3}
           >
             <IconComponent size={ICON_SIZE} />
           </Box>
