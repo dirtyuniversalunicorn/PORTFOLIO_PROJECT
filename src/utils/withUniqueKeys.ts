@@ -1,5 +1,4 @@
-import React from "react";
-import { cloneElement, isValidElement, ReactNode } from "react";
+import React, { cloneElement, isValidElement, type ReactNode } from "react";
 
 export const withUniqueKeys = (children: ReactNode) => {
   return React.Children.map(children, (child, index) => {

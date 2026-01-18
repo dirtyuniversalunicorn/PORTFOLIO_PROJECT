@@ -1,6 +1,6 @@
-import { withUniqueKeys } from "@/utils/withUniqueKeys";
-import Marquee from "react-fast-marquee";
 import type { MarqueeProps } from "react-fast-marquee";
+import Marquee from "react-fast-marquee";
+import { withUniqueKeys } from "@/utils/withUniqueKeys";
 
 export type MarqueeSliderProps = {
   children: React.ReactNode;

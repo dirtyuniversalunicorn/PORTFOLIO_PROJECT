@@ -1,7 +1,19 @@
-import type { TechStack } from "@/types/CollapseProps";
-import { Flex, Collapsible, Image, Stack, Text, Box } from "@chakra-ui/react";
-import { LuChevronRight } from "react-icons/lu";
+import { Box, Collapsible, Flex, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import type { IconType } from "react-icons";
+import { LuChevronRight } from "react-icons/lu";
+
+export type TechStackItem = {
+  index: number;
+  name: string;
+  icon: IconType;
+  docsUrl: string;
+};
+
+export type TechStack = {
+  category: string;
+  items: TechStackItem[];
+}[];
 
 type CollapseProps = {
   techStackItems: TechStack;
@@ -47,17 +59,25 @@ export const Collapse = ({ techStackItems }: CollapseProps) => {
                 md: "repeat(3, 1fr)",
                 lg: "repeat(4, 1fr)",
               }}
-              gap={4}
-              flexDirection="row"
+              gap={6}
             >
-              {stackItem.items.map((item) => (
-                <Link key={item.index} href={item.docsUrl} target="_blank">
-                  <Flex alignItems="center" gap={5}>
-                    <Image src={item.imagePath || undefined} />
-                    <Text>{item.name}</Text>
-                  </Flex>
-                </Link>
-              ))}
+              {stackItem.items.map((item) => {
+                const IconComponent = item.icon;
+
+                if (typeof IconComponent !== "function") {
+                  console.error("Invalid icon for:", item.name);
+                  return null;
+                }
+
+                return (
+                  <Link key={item.index} href={item.docsUrl} target="_blank">
+                    <Flex alignItems="center" gap={5}>
+                      <IconComponent size={40} />
+                      <Text>{item.name}</Text>
+                    </Flex>
+                  </Link>
+                );
+              })}
             </Stack>
           </Collapsible.Content>
         </Collapsible.Root>

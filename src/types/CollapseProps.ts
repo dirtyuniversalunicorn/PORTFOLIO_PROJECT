@@ -2,7 +2,7 @@
 export type TechStackItem = {
   index: number;
   name: string;
-  imagePath: string;
+  icon: React.ReactNode;
   docsUrl: string;
 };
 

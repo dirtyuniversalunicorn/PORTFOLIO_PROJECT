@@ -1,3 +1,5 @@
+// TODO, MIGRATE THIS INTO DATABASE
+
 export const socials = [
   {
     index: 0,

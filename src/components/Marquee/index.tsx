@@ -1,22 +1,30 @@
+import { Box } from "@chakra-ui/react";
 import { techStackItems } from "@/constants/techStackItems";
 import { MarqueeSlider } from "./MarqueeSlider";
-import { Image } from "@chakra-ui/react";
+
+const ICON_SIZE = 40;
 
 export const Marquee = async () => {
   "use cache";
-  // TODO prisma if these items will be coming from the database
+
   const allTechItems = techStackItems.flatMap((category) => category.items);
 
   return (
     <MarqueeSlider>
-      {allTechItems.map((item) => (
-        <Image
-          key={item.index}
-          src={item.imagePath || undefined}
-          opacity={0.5}
-          _hover={{ opacity: 1 }}
-        />
-      ))}
+      {allTechItems.map((item) => {
+        const IconComponent = item.icon;
+
+        return (
+          <Box
+            key={item.index}
+            opacity={0.5}
+            _hover={{ opacity: 1 }}
+            transition="opacity 0.2s"
+          >
+            <IconComponent size={ICON_SIZE} />
+          </Box>
+        );
+      })}
     </MarqueeSlider>
   );
 };
