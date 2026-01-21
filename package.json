@@ -5,6 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"
@@ -13,6 +17,7 @@
     "@aws-sdk/client-s3": "^3.948.0",
     "@chakra-ui/react": "^3.30.0",
     "@emotion/react": "^11.14.0",
+    "@opennextjs/cloudflare": "^1.15.0",
     "@prisma/adapter-pg": "^7.1.0",
     "@prisma/client": "^7.1.0",
     "@react-email/components": "^1.0.2",
@@ -43,6 +48,7 @@
     "prisma": "^7.1.0",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.59.3"
   }
 }
