@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { ProgressIndicator } from "@/components/ProgressIndicator.tsx";
 import { Provider } from "@/components/ui/provider";
+import image from "../../public/logo.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
