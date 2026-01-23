@@ -6,6 +6,8 @@ import { Career } from "@/components/Career";
 import { Education } from "@/components/Education";
 import { Marquee } from "@/components/Marquee";
 
+// comment
+
 const career = [
   {
     index: "1",
