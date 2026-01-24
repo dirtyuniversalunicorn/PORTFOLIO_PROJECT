@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Collapsible,
-  HStack,
-  Stack,
-  Text,
-  VStack,
-  Wrap,
-} from "@chakra-ui/react";
+import { Box, Collapsible, Stack, Text, VStack, Wrap } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { DisplayBadges } from "@/components/Badges";
