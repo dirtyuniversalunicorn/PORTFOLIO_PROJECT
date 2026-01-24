@@ -1,7 +1,7 @@
-import prisma from "@/lib/prisma";
 import { Grid } from "@chakra-ui/react";
 import { notFound } from "next/navigation";
 import { Carousel } from "@/components/Carousel";
+import prisma from "@/lib/prisma";
 import { ProjectCharacteristics } from "./ProjectCharacteristics";
 
 export async function Project({ slug }: { slug: string }) {
@@ -22,7 +22,9 @@ export async function Project({ slug }: { slug: string }) {
       gap={10}
     >
       <ProjectCharacteristics projectDetails={projectDetails} />
-      <Carousel items={projectDetails.imageUrl} />
+      {projectDetails.imageUrl.length >= 0 && (
+        <Carousel items={projectDetails.imageUrl} />
+      )}
     </Grid>
   );
 }
