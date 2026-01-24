@@ -6,7 +6,7 @@ import { Career } from "@/components/Career";
 import { Education } from "@/components/Education";
 import { Marquee } from "@/components/Marquee";
 
-// comment
+// move this into the database
 
 const career = [
   {
@@ -24,7 +24,7 @@ const career = [
   {
     index: "3",
     title: "2022 - 2024 | Doctoral Studies",
-    description: "Not finished.",
+    description: "Ph.D. student",
     text: "Doctoral studies focusing on DNA repair mechanisms in the model organism Arabidopsis thaliana",
   },
 ];
@@ -32,7 +32,12 @@ const career = [
 export default async function About() {
   return (
     <>
-      <Box as="section" id="about_me_page_section" pt={40} pb={20}>
+      <Box
+        as="section"
+        id="about_me_page_section"
+        pt={{ base: 20, lg: 40 }}
+        pb={20}
+      >
         <Box maxWidth={1400} mx={{ base: "5%", "2xl": "auto" }}>
           <BackgroundText text="About Me" />
           <Flex flexDirection={{ base: "column", sm: "row" }}>
