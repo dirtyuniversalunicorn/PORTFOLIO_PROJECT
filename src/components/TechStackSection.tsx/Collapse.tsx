@@ -37,6 +37,7 @@ export const Collapse = ({ techStackItems }: CollapseProps) => {
             width="100%"
             fontSize="xl"
             textTransform="uppercase"
+            textAlign="left"
           >
             <Collapsible.Indicator
               transition="transform 0.2s"
@@ -45,7 +46,7 @@ export const Collapse = ({ techStackItems }: CollapseProps) => {
               <LuChevronRight />
             </Collapsible.Indicator>
             {stackItem.category}
-            <Text ml="auto" fontSize="md">
+            <Text ml="auto" fontSize="md" overflowWrap="nowrap">
               ( {stackItem.items.length} )
             </Text>
           </Collapsible.Trigger>

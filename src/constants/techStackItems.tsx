@@ -117,7 +117,7 @@ export const techStackItems = [
     ],
   },
   {
-    category: "Version control, design and collaboration",
+    category: "Collaboration",
     items: [
       {
         index: 0,
