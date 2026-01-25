@@ -1,6 +1,6 @@
+import { Badge, Link, List, Text, Wrap } from "@chakra-ui/react";
 import type { Project } from "@/generated/prisma/client";
 import prisma from "@/lib/prisma";
-import { Badge, Link, List, Wrap, Text } from "@chakra-ui/react";
 import { SectionSkeleton } from "./Skeletons/SkeletonSection";
 
 export type ProjectDataProps = {
@@ -38,7 +38,13 @@ export async function ProjectsData({ limit }: ProjectDataProps) {
               {project.title}
             </Text>
           </Link>
-          <Text fontSize="base" opacity={0.5}>
+          <Text
+            as="p"
+            fontSize="base"
+            opacity={0.5}
+            width={{ base: "100%", lg: "60%" }}
+            textTransform="initial"
+          >
             {project.shortDescription}
           </Text>
         </List.Item>
