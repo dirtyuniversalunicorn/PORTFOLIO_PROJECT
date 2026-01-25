@@ -1,8 +1,6 @@
 import type { Certificate } from "@/generated/prisma/client";
 import prisma from "@/lib/prisma";
-import { sleep } from "@/utils/sleep";
 import { SkeletonCertificates } from "../Skeletons/SkeletonCertificates";
-import { SectionSkeleton } from "../Skeletons/SkeletonSection";
 import { CertificatesClient } from "./CertificatesClient";
 
 // TODO fix types

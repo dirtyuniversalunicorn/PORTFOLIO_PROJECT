@@ -1,4 +1,4 @@
-import { Dialog, Portal, Image } from "@chakra-ui/react";
+import { Dialog, Image, Portal } from "@chakra-ui/react";
 
 type CertificateDialogProps = {
   activeImage: { src: string; alt: string } | null;
@@ -19,8 +19,8 @@ export const CertificateDialog = ({
           <Dialog.Content
             bg="transparent"
             boxShadow="none"
-            maxW="none"
             w="auto"
+            marginY={{ base: "auto" }}
           >
             <Dialog.Body p={0} display="flex" justifyContent="center">
               {activeImage && (
