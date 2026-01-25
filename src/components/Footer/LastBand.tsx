@@ -9,7 +9,7 @@ export const LastBand = () => {
       justifyContent="center"
       bottom={0}
       mx="auto"
-      mt={10}
+      mt="20"
     >
       <Text>
         ©<CurrentYear /> Designed by{" "}
