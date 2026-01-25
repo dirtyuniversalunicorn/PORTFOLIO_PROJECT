@@ -1,5 +1,5 @@
 import { Grid, Stack } from "@chakra-ui/react";
-import { ContactForm } from "../ContactMeSection/Form";
+import { ContactForm } from "../ContactMeSection";
 import { FooterTitle } from "./FooterTitle";
 
 export const FooterCTAGrid = () => {
