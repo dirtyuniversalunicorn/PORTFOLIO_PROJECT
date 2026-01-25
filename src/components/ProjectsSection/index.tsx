@@ -29,7 +29,7 @@ export const ProjectsSection = async () => {
           </Text>
         </Grid>
         <Suspense fallback={<SectionSkeleton />}>
-          <ProjectsData limit="all" />
+          <ProjectsData limit={3} />
         </Suspense>
       </Flex>
     </Box>
