@@ -29,6 +29,14 @@ export const metadata: Metadata = {
     siteName: "Jaroslav's Portfolio",
     title: "Jaroslav's Portfolio",
     description: "Porfolio page of Jaroslav Filo",
+    images: [
+      {
+        url: "/opengraph-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Jaroslav Filo Portfolio",
+      },
+    ],
   },
 };
 
