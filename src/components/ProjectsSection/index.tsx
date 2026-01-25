@@ -1,6 +1,6 @@
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
-import { ProjectsData } from "@/components/ProjectsData";
 import { Suspense } from "react";
+import { ProjectsData } from "@/components/ProjectsData";
 import { SectionSkeleton } from "../Skeletons/SkeletonSection";
 
 export const ProjectsSection = async () => {
