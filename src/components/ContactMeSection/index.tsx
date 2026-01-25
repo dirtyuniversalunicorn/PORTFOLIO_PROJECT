@@ -147,7 +147,7 @@ export const ContactForm = () => {
         <Button
           type="submit"
           loading={loading}
-          mt={4}
+          mt={1}
           borderColor="white"
           borderRadius={0}
           textAlign="center"

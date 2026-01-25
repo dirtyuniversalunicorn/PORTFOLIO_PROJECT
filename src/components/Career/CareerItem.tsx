@@ -18,10 +18,18 @@ export const CareerItem = ({ title, description, text }: CareerItemProps) => {
         </Timeline.Indicator>
       </Timeline.Connector>
       <Timeline.Content>
-        <Timeline.Title textTransform="uppercase" fontSize={20}>
+        <Timeline.Title
+          textTransform="uppercase"
+          fontSize={20}
+          lineHeight={{ base: 1.3, md: 1 }}
+        >
           {title}
         </Timeline.Title>
-        <Timeline.Description color="white" fontSize={18}>
+        <Timeline.Description
+          color="white"
+          fontSize={18}
+          lineHeight={{ base: 1.3, md: 1 }}
+        >
           {description}
         </Timeline.Description>
         <Text
