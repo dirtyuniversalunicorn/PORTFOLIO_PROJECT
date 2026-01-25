@@ -22,7 +22,7 @@ export default async function ProjectsDetail({
   return (
     <Stack
       as="section"
-      py={40}
+      py={{ base: 24, md: 40 }}
       maxWidth={1400}
       mx={{ base: "5%", "2xl": "auto" }}
       mr={{ base: "8%" }}
