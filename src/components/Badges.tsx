@@ -6,10 +6,10 @@ export type DisplayBadgesProps = {
 
 export const DisplayBadges = ({ badgeData }: DisplayBadgesProps) => {
   return (
-    <Wrap>
+    <>
       {badgeData.map((badge: string) => (
         <Badge key={badge}>{badge}</Badge>
       ))}
-    </Wrap>
+    </>
   );
 };

@@ -18,7 +18,7 @@ export const ProjectCharacteristics = ({
   return (
     <Stack>
       <VStack gap={4} alignItems="start">
-        <Text as="h1" fontSize={{ base: "5xl" }} lineHeight={1.3}>
+        <Text as="h1" fontSize={{ base: "3xl", md: "5xl" }} lineHeight={1.3}>
           {projectDetails?.title}
         </Text>
         <Wrap>
