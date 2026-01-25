@@ -1,5 +1,5 @@
-import type { TitleProps } from "@/types/TitleProps";
 import { Flex, Text } from "@chakra-ui/react";
+import type { TitleProps } from "@/types/TitleProps";
 
 export const FooterTitle = ({ title, ...props }: TitleProps) => {
   return (

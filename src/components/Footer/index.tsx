@@ -10,10 +10,10 @@ import { LastBand } from "./LastBand";
 export const Footer = () => {
   return (
     <Stack id="footer_section">
-      <Stack mx={{ base: "5%", "2xl": "auto" }} pt={{ base: "20" }}>
+      <Stack mx={{ base: "5%", "2xl": "auto" }} pt={{ base: "20" }} gap={5}>
         <FooterTitle
-          fontSize={{ base: "lg", md: "2xl" }}
-          title="Do you have question, idea, or just want to say Hello?"
+          fontSize={{ base: "lg", md: "3xl" }}
+          title="Have a question, an idea, or would you just like to get in touch?"
           width={{ base: "100%" }}
           fontWeight={300}
           letterSpacing={1.61}
