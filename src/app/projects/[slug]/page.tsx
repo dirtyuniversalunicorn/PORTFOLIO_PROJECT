@@ -24,7 +24,8 @@ export default async function ProjectsDetail({
       as="section"
       py={40}
       maxWidth={1400}
-      mx={{ base: "8%", "2xl": "auto" }}
+      mx={{ base: "5%", "2xl": "auto" }}
+      mr={{ base: "8%" }}
     >
       <Suspense fallback={<SkeletonProjectDetail />}>
         <Project slug={slug} />
