@@ -1,13 +1,10 @@
 import { Badge, Link, List, Text, Wrap } from "@chakra-ui/react";
 import type { Project } from "@/generated/prisma/client";
 import prisma from "@/lib/prisma";
-import { SectionSkeleton } from "./Skeletons/SkeletonSection";
 
 export type ProjectDataProps = {
   limit?: number | "all";
 };
-
-// TODO
 
 export async function ProjectsData({ limit }: ProjectDataProps) {
   "use cache";
@@ -51,7 +48,6 @@ export async function ProjectsData({ limit }: ProjectDataProps) {
           </Text>
         </List.Item>
       ))}
-      {projects.length === 0 && <SectionSkeleton />}
     </List.Root>
   );
 }
