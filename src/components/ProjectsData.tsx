@@ -7,6 +7,8 @@ export type ProjectDataProps = {
   limit?: number | "all";
 };
 
+// TODO
+
 export async function ProjectsData({ limit }: ProjectDataProps) {
   "use cache";
   let projects: Project[] = [];
