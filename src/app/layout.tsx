@@ -8,51 +8,51 @@ import { ProgressIndicator } from "@/components/ProgressIndicator.tsx";
 import { Provider } from "@/components/ui/provider";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 export const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Jaroslav Filo",
-  description: "Jaroslav's portfolio page.",
-  creator: "Jaroslav",
-  generator: "Next.js",
-  openGraph: {
-    type: "website",
-    locale: "en_US", // todo
-    url: "https://jaroslavfilo.com",
-    siteName: "Jaroslav's Portfolio",
-    title: "Jaroslav's Portfolio",
-    description: "Porfolio page of Jaroslav Filo",
-  },
+    title: "Jaroslav Filo",
+    description: "Jaroslav's portfolio page.",
+    creator: "Jaroslav",
+    generator: "Next.js",
+    openGraph: {
+        type: "website",
+        locale: "en_US", // todo
+        url: "https://jaroslavfilo.com",
+        siteName: "Jaroslav's Portfolio",
+        title: "Jaroslav's Portfolio",
+        description: "Porfolio page of Jaroslav Filo",
+    },
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Provider>
-          <Suspense>
-            <Navigation />
-          </Suspense>
-          <Suspense>
-            <ProgressIndicator />
-          </Suspense>
-          {children}
-          <Footer />
-        </Provider>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en" suppressHydrationWarning className="dark">
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                <Provider>
+                    <Suspense>
+                        <Navigation />
+                    </Suspense>
+                    <Suspense>
+                        <ProgressIndicator />
+                    </Suspense>
+                    {children}
+                    <Footer />
+                </Provider>
+            </body>
+        </html>
+    );
 }
