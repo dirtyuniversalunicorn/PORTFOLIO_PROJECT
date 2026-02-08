@@ -1,4 +1,4 @@
-import { Stack, Skeleton as ChakraSkeleton } from "@chakra-ui/react";
+import { Skeleton as ChakraSkeleton, Stack } from "@chakra-ui/react";
 
 export const Skeleton = () => {
   return (

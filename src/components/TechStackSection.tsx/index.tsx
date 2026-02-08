@@ -1,6 +1,6 @@
-import { Box, Grid, Flex, Text } from "@chakra-ui/react";
-import { Collapse } from "./Collapse";
+import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { techStackItems } from "@/constants/techStackItems";
+import { Collapse } from "./Collapse";
 
 export const TechStackSection = () => {
   return (

@@ -2,8 +2,8 @@
 
 import { Box, Grid, Image } from "@chakra-ui/react";
 import { useState } from "react";
-import { CertificateDialog } from "./CertificateDialog";
 import type { Certificate } from "@/generated/prisma/client";
+import { CertificateDialog } from "./CertificateDialog";
 
 export type CertificatesProps = {
   certificates: Certificate[];

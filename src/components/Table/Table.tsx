@@ -1,9 +1,9 @@
 "use client";
 
-import { ProjectProps } from "@/types/ProjectsProps";
-import { Text, Table as ChakraTable, Icon } from "@chakra-ui/react";
+import { Table as ChakraTable, Icon, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import type { ProjectProps } from "@/types/ProjectsProps";
 
 export type TableClientProps = {
   projects: ProjectProps[];
@@ -43,8 +43,8 @@ export const TableClient = ({ projects }: TableClientProps) => {
             </ChakraTable.Cell>
 
             <ChakraTable.Cell textAlign="center">
-              {item.imageUrl.map((url, index) => (
-                <Icon key={index}>
+              {item.imageUrl.map((url) => (
+                <Icon key={url}>
                   <Link href={url} target="_blank">
                     <FaExternalLinkAlt />
                   </Link>

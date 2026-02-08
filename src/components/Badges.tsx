@@ -1,4 +1,4 @@
-import { Badge, Wrap } from "@chakra-ui/react";
+import { Badge } from "@chakra-ui/react";
 
 export type DisplayBadgesProps = {
   badgeData: string[];

@@ -1,4 +1,4 @@
-import { Stack, SkeletonText as ChakraSkeletonText } from "@chakra-ui/react";
+import { SkeletonText as ChakraSkeletonText, Stack } from "@chakra-ui/react";
 
 const SectionSkeletonItem = () => {
   return (

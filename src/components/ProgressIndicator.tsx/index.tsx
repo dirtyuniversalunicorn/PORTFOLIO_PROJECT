@@ -9,6 +9,7 @@ export const ProgressIndicator = () => {
   const [progress, setProgress] = useState(0);
   const [isScrollable, setIsScrollable] = useState(false);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <ignore this>
   useEffect(() => {
     const update = () => {
       const scrollTop = window.scrollY;
@@ -35,7 +36,6 @@ export const ProgressIndicator = () => {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-    // biome-ignore: lint/correctness/useExhaustiveDependencies
   }, [pathname]);
 
   if (!isScrollable) return null;

@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import { footerNecessities } from "@/constants/footerNecessities";
 import { footerPages } from "@/constants/footerPages";
 import { socials } from "@/constants/socials";

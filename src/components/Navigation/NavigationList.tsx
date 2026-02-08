@@ -1,5 +1,5 @@
-import type { NavigationListProps } from "@/types/NavigationListProps";
 import { Box } from "@chakra-ui/react";
+import type { NavigationListProps } from "@/types/NavigationListProps";
 import { NavigationItem } from "./NavigationItem";
 
 export const NavigationList = ({ navigationItems }: NavigationListProps) => {

@@ -7,7 +7,9 @@ const s3 = new S3Client({
   region: "auto",
   endpoint: process.env.R2_ENDPOINT,
   credentials: {
+    // biome-ignore lint/style/noNonNullAssertion: <ignore>
     accessKeyId: process.env.R2_ACCESS_KEY_ID!,
+    // biome-ignore lint/style/noNonNullAssertion: <ignore>
     secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
   },
 });

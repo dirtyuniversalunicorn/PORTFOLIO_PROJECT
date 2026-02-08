@@ -1,11 +1,11 @@
 import { Box, Grid } from "@chakra-ui/react";
-import { Socials } from "../Socials";
+import Link from "next/link";
 import type { AboutSectionProps } from "@/types/AboutSectionProps";
-import { Stats } from "./Stats";
+import { Button } from "../Button.tsx";
+import { Socials } from "../Socials";
 import { Description } from "./Description";
 import { Photo } from "./Photo";
-import { Button } from "../Button.tsx";
-import Link from "next/link";
+import { Stats } from "./Stats";
 
 // TODO types
 

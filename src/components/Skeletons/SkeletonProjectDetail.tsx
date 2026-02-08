@@ -1,4 +1,4 @@
-import { Grid, Box, Skeleton } from "@chakra-ui/react";
+import { Box, Grid, Skeleton } from "@chakra-ui/react";
 
 export function SkeletonProjectDetail() {
   return (

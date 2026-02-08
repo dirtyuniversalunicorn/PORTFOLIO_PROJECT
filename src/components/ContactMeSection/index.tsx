@@ -92,8 +92,18 @@ export const ContactForm = () => {
       formRef.current.reset();
       setMessage("");
       recaptchaRef.current?.reset();
-    } catch (err: any) {
-      toaster.error(err.message || "Failed to send message");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        toaster.error({
+          title: "Sending failed!",
+          description: err.message,
+        });
+      } else {
+        toaster.error({
+          title: "Sending failed!",
+          description: "Failed to send message",
+        });
+      }
     } finally {
       setLoading(false);
     }
@@ -139,6 +149,7 @@ export const ContactForm = () => {
         {errors.message && <Text color="red.500">{errors.message}</Text>}
 
         <ReCAPTCHA
+          // biome-ignore lint/style/noNonNullAssertion: <ignore this>
           sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY!}
           ref={recaptchaRef}
         />

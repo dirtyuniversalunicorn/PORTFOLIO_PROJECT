@@ -1,6 +1,6 @@
 "use client";
 
-import { Text, Progress, Flex } from "@chakra-ui/react";
+import { Flex, Progress, Text } from "@chakra-ui/react";
 
 type ProgressMessageBarProps = {
   letters: number;
