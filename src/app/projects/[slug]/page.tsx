@@ -5,9 +5,19 @@ import prisma from "@/lib/prisma";
 import { Project } from "./components/project";
 
 export async function generateStaticParams() {
-  const projects = await prisma.project.findMany({
-    select: { slug: true },
-  });
+  let projects: { slug: string }[] = [];
+
+  try {
+    projects = await prisma.project.findMany({
+      select: { slug: true },
+    });
+  } catch (error) {
+    if (!process.env.CI) {
+      throw error;
+    }
+
+    projects = [{ slug: "build-placeholder" }];
+  }
 
   return projects.map((project) => ({
     slug: project.slug,

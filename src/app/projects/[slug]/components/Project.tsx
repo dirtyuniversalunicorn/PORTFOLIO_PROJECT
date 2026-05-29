@@ -6,11 +6,21 @@ import { ProjectCharacteristics } from "./project-characteristics";
 
 export async function Project({ slug }: { slug: string }) {
   "use cache";
-  const projectDetails = await prisma.project.findUnique({
-    where: {
-      slug: slug,
-    },
-  });
+  let projectDetails = null;
+
+  try {
+    projectDetails = await prisma.project.findUnique({
+      where: {
+        slug: slug,
+      },
+    });
+  } catch (error) {
+    if (!process.env.CI) {
+      throw error;
+    }
+
+    projectDetails = null;
+  }
 
   if (!projectDetails) {
     notFound();
