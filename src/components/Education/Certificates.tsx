@@ -1,7 +1,7 @@
 import type { Certificate } from "@/generated/prisma/client";
 import prisma from "@/lib/prisma";
-import { SkeletonCertificates } from "../Skeletons/SkeletonCertificates";
-import { CertificatesClient } from "./CertificatesClient";
+import { SkeletonCertificates } from "../skeletons/skeleton-certificates";
+import { CertificatesClient } from "./certificates-client";
 
 // TODO fix types
 // is there way to not double the information, since the same enum is used in prisma.schema

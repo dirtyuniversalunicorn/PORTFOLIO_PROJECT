@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import type { SectionProps } from "@/types/SectionProps";
+import type { SectionProps } from "@/types/section-props";
 
 export const Section = ({ children }: SectionProps) => {
   return (

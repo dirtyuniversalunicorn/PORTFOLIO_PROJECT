@@ -1,6 +1,6 @@
 import { Flex, Link, Text, Wrap } from "@chakra-ui/react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
-import type { SocialsProps } from "@/types/AboutSectionProps";
+import type { SocialsProps } from "@/types/about-section-props";
 
 export const Socials = ({ socials, showTitle, ...props }: SocialsProps) => {
   const getIcon = (name: string) => {

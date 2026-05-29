@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
-import { Footer } from "@/components/Footer";
-import { Navigation } from "@/components/Navigation";
-import { ProgressIndicator } from "@/components/ProgressIndicator.tsx";
+import { Footer } from "@/components/footer";
+import { Navigation } from "@/components/navigation";
+import { ProgressIndicator } from "@/components/progress-indicator";
 import { Provider } from "@/components/ui/provider";
 
 const geistSans = Geist({

@@ -1,8 +1,8 @@
 import { Box, Text } from "@chakra-ui/react";
 import { Suspense } from "react";
-import { BackgroundText } from "../BackgroundText";
-import { SkeletonCertificates } from "../Skeletons/SkeletonCertificates";
-import { Certificates } from "./Certificates";
+import { BackgroundText } from "../background-text";
+import { SkeletonCertificates } from "../skeletons/skeleton-certificates";
+import { Certificates } from "./certificates";
 
 export const Education = async () => {
   return (

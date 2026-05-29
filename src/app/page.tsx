@@ -1,7 +1,7 @@
-import { AboutSection } from "@/components/AboutSection";
-import { HeroSection } from "@/components/HeroSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { TechStackSection } from "@/components/TechStackSection.tsx";
+import { AboutSection } from "@/components/about-section";
+import { HeroSection } from "@/components/hero-section";
+import { ProjectsSection } from "@/components/projects-section";
+import { TechStackSection } from "@/components/tech-stack-section";
 import { socials } from "@/constants/socials";
 
 export default async function Home() {

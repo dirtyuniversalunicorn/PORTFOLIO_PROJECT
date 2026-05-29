@@ -1,5 +1,5 @@
 import { Flex, Timeline } from "@chakra-ui/react";
-import { CareerItem, type CareerItemProps } from "./CareerItem";
+import { CareerItem, type CareerItemProps } from "./career-item";
 
 export type CareerProps = {
   jobs: CareerItemProps[];

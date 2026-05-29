@@ -1,5 +1,5 @@
 import { Box, Grid, Text } from "@chakra-ui/react";
-import { Card } from "./Card";
+import { Card } from "./card";
 import testimonials from "./data.json";
 
 export const Testimonials = () => {

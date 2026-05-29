@@ -3,7 +3,7 @@
 import { Table as ChakraTable, Icon, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import type { ProjectProps } from "@/types/ProjectsProps";
+import type { ProjectProps } from "@/types/projects-props";
 
 export type TableClientProps = {
   projects: ProjectProps[];

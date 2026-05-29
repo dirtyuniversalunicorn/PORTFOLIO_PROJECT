@@ -1,6 +1,6 @@
-import { BackgroundText } from "@/components/BackgroundText";
-import { EmptyState } from "@/components/EmptyState";
-import { Section } from "@/components/Section";
+import { BackgroundText } from "@/components/background-text";
+import { EmptyState } from "@/components/empty-state";
+import { Section } from "@/components/section";
 
 export default async function Reviews() {
   return (

@@ -1,8 +1,8 @@
 import { Grid } from "@chakra-ui/react";
 import { notFound } from "next/navigation";
-import { Carousel } from "@/components/Carousel";
+import { Carousel } from "@/components/carousel";
 import prisma from "@/lib/prisma";
-import { ProjectCharacteristics } from "./ProjectCharacteristics";
+import { ProjectCharacteristics } from "./project-characteristics";
 
 export async function Project({ slug }: { slug: string }) {
   "use cache";

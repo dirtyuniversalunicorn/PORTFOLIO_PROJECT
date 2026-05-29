@@ -1,8 +1,8 @@
 import { Stack } from "@chakra-ui/react";
 import { Suspense } from "react";
-import { BackgroundText } from "@/components/BackgroundText";
-import { Skeleton } from "@/components/Skeletons/Skeleton";
-import { ProjectsData } from "../../components/ProjectsData";
+import { BackgroundText } from "@/components/background-text";
+import { Skeleton } from "@/components/skeletons/skeleton";
+import { ProjectsData } from "../../components/projects-data";
 
 export default async function Projects() {
   return (

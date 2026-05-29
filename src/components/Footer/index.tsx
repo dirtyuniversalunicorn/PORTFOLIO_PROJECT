@@ -1,8 +1,8 @@
 import { Grid, Stack } from "@chakra-ui/react";
 import { Suspense } from "react";
-import { FooterGrid } from "./FooterGrid";
-import { FooterTitle } from "./FooterTitle";
-import { LastBand } from "./LastBand";
+import { FooterGrid } from "./footer-grid";
+import { FooterTitle } from "./footer-title";
+import { LastBand } from "./last-band";
 
 export const Footer = () => {
   return (

@@ -1,10 +1,10 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { Suspense } from "react";
-import { Photo } from "@/components/AboutSection/Photo";
-import { BackgroundText } from "@/components/BackgroundText";
-import { Career } from "@/components/Career";
-import { Education } from "@/components/Education";
-import { Marquee } from "@/components/Marquee";
+import { Photo } from "@/components/about-section/photo";
+import { BackgroundText } from "@/components/background-text";
+import { Career } from "@/components/career";
+import { Education } from "@/components/education";
+import { Marquee } from "@/components/marquee";
 
 // move this into the database
 

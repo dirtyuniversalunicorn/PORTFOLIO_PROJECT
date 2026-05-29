@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
-import { techStackItems } from "@/constants/techStackItems";
-import { MarqueeSlider } from "./MarqueeSlider";
+import { techStackItems } from "@/constants/tech-stack-items";
+import { MarqueeSlider } from "./marquee-slider";
 
 const ICON_SIZE = 40;
 

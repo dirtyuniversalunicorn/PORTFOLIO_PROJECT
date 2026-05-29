@@ -1,6 +1,6 @@
 import { Center, Stack, Text, VStack } from "@chakra-ui/react";
-import { BackgroundText } from "@/components/BackgroundText";
-import { SingInForm } from "./components/SignInForm";
+import { BackgroundText } from "@/components/background-text";
+import { SingInForm } from "./components/sign-in-form";
 
 export default function LoginPage() {
   return (

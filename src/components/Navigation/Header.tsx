@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import type { HeaderProps } from "@/types/HeaderProps.js";
+import type { HeaderProps } from "@/types/header-props";
 
 // TODO remove focus? on the mobile button after clicking
 
