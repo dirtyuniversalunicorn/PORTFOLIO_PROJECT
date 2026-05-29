@@ -1,5 +1,6 @@
 export type ProjectProps = {
   id: string;
+  slug: string;
   title: string;
   websiteUrl: string;
   shortDescription: string;

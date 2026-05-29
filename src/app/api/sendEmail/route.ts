@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { contactSchema } from "@/components/ContactMeSection/contact.schema";
 import { EmailTemplate } from "@/components/ContactMeSection/EmailTemplate";
 
 export async function POST(req: Request) {
@@ -22,14 +23,18 @@ export async function POST(req: Request) {
 
     const resend = new Resend(apiKey);
 
-    const { name, email, message, token } = await req.json();
+    const body = await req.json();
+    const token = typeof body?.token === "string" ? body.token : "";
+    const contactResult = contactSchema.safeParse(body);
 
-    if (!name || !email || !message || !token) {
+    if (!contactResult.success || !token) {
       return Response.json(
-        { error: "Missing required fields" },
+        { error: "Invalid contact form submission" },
         { status: 400 },
       );
     }
+
+    const { name, email, message } = contactResult.data;
 
     const recaptchaRes = await fetch(
       "https://www.google.com/recaptcha/api/siteverify",

@@ -36,7 +36,7 @@ export const TableClient = ({ projects }: TableClientProps) => {
 
             <ChakraTable.Cell textAlign="center">
               <Icon>
-                <Link href={`/projects/${item.id}`} target="_blank">
+                <Link href={`/projects/${item.slug}`} target="_blank">
                   <FaExternalLinkAlt />
                 </Link>
               </Icon>

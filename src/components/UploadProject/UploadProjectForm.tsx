@@ -1,7 +1,10 @@
 import { Box, Text } from "@chakra-ui/react";
 import { revalidatePath } from "next/cache";
 import Form from "next/form";
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { Role } from "@/generated/prisma/enums";
+import { getSession, hasPermission } from "@/lib/dal";
 import prisma from "@/lib/prisma";
 import { generateSlug } from "@/utils/generateSlug";
 import { FormInput } from "../FormInput";
@@ -9,6 +12,13 @@ import { FormInput } from "../FormInput";
 export default function UploadProjectForm() {
   async function createProject(formData: FormData) {
     "use server";
+
+    const session = await getSession();
+    const isAdmin = await hasPermission([Role.ADMIN]);
+
+    if (!session || !isAdmin) {
+      redirect("/");
+    }
 
     const title = formData.get("project_title") as string;
 
@@ -31,6 +41,8 @@ export default function UploadProjectForm() {
       throw new Error("Images are required");
     }
 
+    const cookie = (await headers()).get("cookie");
+
     const uploadedImageUrls = await Promise.all(
       files.map(async (file) => {
         const formData = new FormData();
@@ -40,6 +52,7 @@ export default function UploadProjectForm() {
           `${process.env.NEXT_PUBLIC_APP_URL}/api/upload`,
           {
             method: "POST",
+            headers: cookie ? { cookie } : undefined,
             body: formData,
           },
         );
@@ -62,7 +75,7 @@ export default function UploadProjectForm() {
         longDescription,
         technologies,
         imageUrl: uploadedImageUrls,
-        authorId: "cmjfqivfk0000ocoe4vqm3wdt",
+        authorId: session.user.id,
       },
     });
 

@@ -77,7 +77,7 @@ export const ContactForm = () => {
     setLoading(true);
 
     try {
-      toaster.promise(sendEmailRequest({ ...result.data, token }), {
+      await toaster.promise(sendEmailRequest({ ...result.data, token }), {
         loading: { title: "", description: "Sending message..." },
         success: {
           title: "Message sent!",
