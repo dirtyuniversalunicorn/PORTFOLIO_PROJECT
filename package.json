@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
-    "ci:check": "biome check . && next build"
+    "ci:check": "biome check . && npm run build"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.948.0",
