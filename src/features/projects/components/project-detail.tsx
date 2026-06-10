@@ -1,26 +1,12 @@
 import { Grid } from "@chakra-ui/react";
 import { notFound } from "next/navigation";
 import { Carousel } from "@/components/carousel";
-import prisma from "@/lib/prisma";
+import { getProjectBySlug } from "@/features/projects/queries";
 import { ProjectCharacteristics } from "./project-characteristics";
 
-export async function Project({ slug }: { slug: string }) {
+export async function ProjectDetail({ slug }: { slug: string }) {
   "use cache";
-  let projectDetails = null;
-
-  try {
-    projectDetails = await prisma.project.findUnique({
-      where: {
-        slug: slug,
-      },
-    });
-  } catch (error) {
-    if (!process.env.CI) {
-      throw error;
-    }
-
-    projectDetails = null;
-  }
+  const projectDetails = await getProjectBySlug(slug);
 
   if (!projectDetails) {
     notFound();

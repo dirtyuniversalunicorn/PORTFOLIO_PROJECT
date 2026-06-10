@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import { NewProject } from "./new-project";
+import { NewProjectPageContent } from "@/features/admin-projects/components/new-project-page-content";
 
 export default async function NewProjectPage() {
   return (
     <Suspense>
-      <NewProject />
+      <NewProjectPageContent />
     </Suspense>
   );
 }

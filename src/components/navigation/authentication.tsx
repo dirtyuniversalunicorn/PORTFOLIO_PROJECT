@@ -1,7 +1,7 @@
 "use client";
 
-import { LoginButton } from "@/app/(auth)/login/components/login-button";
-import { LogoutButton } from "@/app/(auth)/login/components/logout-button";
+import { LoginButton } from "@/features/auth/components/login-button";
+import { LogoutButton } from "@/features/auth/components/logout-button";
 import { authClient } from "@/lib/auth-client";
 
 export const Authentication = () => {

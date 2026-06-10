@@ -1,19 +1,12 @@
 import { Box, Skeleton } from "@chakra-ui/react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { Button } from "@/components/button";
-import { AdminProjectsTable } from "@/features/admin-projects/components/admin-projects-table";
-import { Role } from "@/generated/prisma/enums";
-import { getSession, hasPermission } from "@/lib/dal";
+import { requireAdminSession } from "@/features/admin-projects/require-admin-session";
+import { AdminProjectsTable } from "./admin-projects-table";
 
 export const AdminDashboard = async () => {
-  const session = await getSession();
-  const isAdmin = await hasPermission([Role.ADMIN]);
-
-  if (!session || !isAdmin) {
-    redirect("/");
-  }
+  await requireAdminSession();
 
   return (
     <Box as="section" py={40}>

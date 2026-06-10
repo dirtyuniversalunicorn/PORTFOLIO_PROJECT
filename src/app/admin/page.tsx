@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { AdminDashboard } from "./admin-dashboard";
+import { AdminDashboard } from "@/features/admin-projects/components/admin-dashboard";
 
 export default async function Admin() {
   return (

@@ -7,13 +7,13 @@ import { DisplayBadges } from "@/components/badges";
 import { IconTooltip } from "@/components/icon-tooltip";
 import type { ProjectViewModel } from "@/features/projects/types";
 
-type ProjectCharacteristics = {
+type ProjectCharacteristicsProps = {
   projectDetails: ProjectViewModel;
 };
 
 export const ProjectCharacteristics = ({
   projectDetails,
-}: ProjectCharacteristics) => {
+}: ProjectCharacteristicsProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Stack>
