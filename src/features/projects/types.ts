@@ -1,4 +1,4 @@
-export type ProjectProps = {
+export type ProjectViewModel = {
   id: string;
   slug: string;
   title: string;

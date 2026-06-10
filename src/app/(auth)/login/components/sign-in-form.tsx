@@ -7,7 +7,7 @@ import { Button } from "@/components/button";
 import { toaster } from "@/components/ui/toaster";
 import { authClient } from "@/lib/auth-client";
 
-export const SingInForm = () => {
+export const SignInForm = () => {
   // const [loading, setLoading] = useState(false);
   // const [error, setError] = useState<string | null>(null);
 
@@ -44,11 +44,11 @@ export const SingInForm = () => {
           toaster.promise(handleSocialSignIn("github"), {
             success: {
               title: "Login success!",
-              description: "You were succesfully logged in.",
+              description: "You were successfully logged in.",
             },
             error: {
               title: "Login failed!",
-              description: "Something wrong while trying to login.",
+              description: "Something went wrong while trying to login.",
             },
             loading: { title: <Spinner />, description: "Please wait" },
           });

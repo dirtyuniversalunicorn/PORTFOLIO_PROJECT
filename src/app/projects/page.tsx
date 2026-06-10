@@ -2,7 +2,7 @@ import { Stack } from "@chakra-ui/react";
 import { Suspense } from "react";
 import { BackgroundText } from "@/components/background-text";
 import { Skeleton } from "@/components/skeletons/skeleton";
-import { ProjectsData } from "../../components/projects-data";
+import { ProjectList } from "@/features/projects/components/project-list";
 
 export default async function Projects() {
   return (
@@ -16,7 +16,7 @@ export default async function Projects() {
       <BackgroundText text="Projects" />
 
       <Suspense fallback={<Skeleton />}>
-        <ProjectsData limit="all" />
+        <ProjectList limit="all" />
       </Suspense>
     </Stack>
   );

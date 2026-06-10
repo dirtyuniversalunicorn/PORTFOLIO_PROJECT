@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { redirect } from "next/navigation";
-import { UploadProject } from "@/components/upload-project";
+import { CreateProjectForm } from "@/features/admin-projects/components/create-project-form";
 import { Role } from "@/generated/prisma/enums";
 import { getSession, hasPermission } from "@/lib/dal";
 
@@ -15,7 +15,7 @@ export const NewProject = async () => {
   return (
     <Box as="section" py={40}>
       <Box maxWidth={1400} mx="auto">
-        <UploadProject />
+        <CreateProjectForm />
       </Box>
     </Box>
   );

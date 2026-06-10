@@ -3,14 +3,14 @@ import Link from "next/link";
 import type { IconType } from "react-icons";
 import { LuChevronRight } from "react-icons/lu";
 
-export type TechStackItem = {
+type TechStackItem = {
   index: number;
   name: string;
   icon: IconType;
   docsUrl: string;
 };
 
-export type TechStack = {
+type TechStack = {
   category: string;
   items: TechStackItem[];
 }[];

@@ -2,7 +2,7 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import { footerNecessities } from "@/constants/footer-necessities";
 import { footerPages } from "@/constants/footer-pages";
 import { socials } from "@/constants/socials";
-import { ContactForm } from "../contact-me-section";
+import { ContactForm } from "@/features/contact/components/contact-form";
 import { Socials } from "../socials";
 import { FooterGridList } from "./footer-grid-list";
 

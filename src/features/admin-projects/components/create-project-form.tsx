@@ -3,13 +3,13 @@ import { revalidatePath } from "next/cache";
 import Form from "next/form";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { FormInput } from "@/components/form-input";
 import { Role } from "@/generated/prisma/enums";
 import { getSession, hasPermission } from "@/lib/dal";
 import prisma from "@/lib/prisma";
 import { generateSlug } from "@/utils/generate-slug";
-import { FormInput } from "../form-input";
 
-export default function UploadProjectForm() {
+export function CreateProjectForm() {
   async function createProject(formData: FormData) {
     "use server";
 

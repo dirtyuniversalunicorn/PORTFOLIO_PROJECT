@@ -5,10 +5,10 @@ import { useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { DisplayBadges } from "@/components/badges";
 import { IconTooltip } from "@/components/icon-tooltip";
-import type { ProjectProps } from "@/types/projects-props";
+import type { ProjectViewModel } from "@/features/projects/types";
 
 type ProjectCharacteristics = {
-  projectDetails: ProjectProps;
+  projectDetails: ProjectViewModel;
 };
 
 export const ProjectCharacteristics = ({

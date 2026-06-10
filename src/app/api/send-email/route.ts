@@ -1,6 +1,6 @@
 import { Resend } from "resend";
-import { contactSchema } from "@/components/contact-me-section/contact-schema";
-import { EmailTemplate } from "@/components/contact-me-section/email-template";
+import { contactSchema } from "@/features/contact/contact-schema";
+import { EmailTemplate } from "@/features/contact/email-template";
 
 export async function POST(req: Request) {
   try {

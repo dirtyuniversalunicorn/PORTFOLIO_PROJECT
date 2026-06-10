@@ -1,6 +1,6 @@
 import { Box, Flex, Grid, Text } from "@chakra-ui/react";
 import { Suspense } from "react";
-import { ProjectsData } from "@/components/projects-data";
+import { ProjectList } from "@/features/projects/components/project-list";
 import { SectionSkeleton } from "../skeletons/skeleton-section";
 
 export const ProjectsSection = async () => {
@@ -29,7 +29,7 @@ export const ProjectsSection = async () => {
           </Text>
         </Grid>
         <Suspense fallback={<SectionSkeleton />}>
-          <ProjectsData limit={3} />
+          <ProjectList limit={3} />
         </Suspense>
       </Flex>
     </Box>

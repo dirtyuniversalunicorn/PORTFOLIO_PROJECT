@@ -4,10 +4,10 @@ import { Button, Field, Flex, Input, Text, Textarea } from "@chakra-ui/react";
 import { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import type { z } from "zod";
-import { CONFIG } from "../../../portfolio.config";
-import { toaster } from "../ui/toaster";
-import { contactSchema } from "./contact-schema";
-import { ProgressMessageBar } from "./progress";
+import { toaster } from "@/components/ui/toaster";
+import { contactSchema } from "@/features/contact/contact-schema";
+import { CONFIG } from "../../../../portfolio.config";
+import { ProgressMessageBar } from "./progress-message-bar";
 
 type ContactFormData = z.infer<typeof contactSchema>;
 

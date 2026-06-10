@@ -3,13 +3,15 @@
 import { Table as ChakraTable, Icon, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import type { ProjectProps } from "@/types/projects-props";
+import type { ProjectViewModel } from "@/features/projects/types";
 
-export type TableClientProps = {
-  projects: ProjectProps[];
+export type AdminProjectsTableClientProps = {
+  projects: ProjectViewModel[];
 };
 
-export const TableClient = ({ projects }: TableClientProps) => {
+export const AdminProjectsTableClient = ({
+  projects,
+}: AdminProjectsTableClientProps) => {
   return (
     <ChakraTable.Root size="sm" striped interactive>
       <ChakraTable.Header>
@@ -26,7 +28,7 @@ export const TableClient = ({ projects }: TableClientProps) => {
         </ChakraTable.Row>
       </ChakraTable.Header>
       <ChakraTable.Body>
-        {projects.map((item: ProjectProps) => (
+        {projects.map((item) => (
           <ChakraTable.Row key={item.id}>
             <ChakraTable.Cell>{item.title} </ChakraTable.Cell>
             <ChakraTable.Cell>{item.shortDescription}</ChakraTable.Cell>

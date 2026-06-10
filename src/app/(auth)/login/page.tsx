@@ -1,6 +1,6 @@
 import { Center, Stack, Text, VStack } from "@chakra-ui/react";
 import { BackgroundText } from "@/components/background-text";
-import { SingInForm } from "./components/sign-in-form";
+import { SignInForm } from "./components/sign-in-form";
 
 export default function LoginPage() {
   return (
@@ -17,7 +17,7 @@ export default function LoginPage() {
           <Text fontSize="2xl" fontWeight={300} letterSpacing={1.61}>
             Continue with your account
           </Text>
-          <SingInForm />
+          <SignInForm />
         </VStack>
       </Center>
     </Stack>

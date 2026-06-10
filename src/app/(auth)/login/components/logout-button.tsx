@@ -45,11 +45,11 @@ export const LogoutButton = ({ ...props }) => {
           toaster.promise(handleSignOut, {
             success: {
               title: "Successfully logged out!",
-              description: "You were succesfully logged out.",
+              description: "You were successfully logged out.",
             },
             error: {
               title: "Logout failed!",
-              description: "Something wrong while trying to logout.",
+              description: "Something went wrong while trying to logout.",
             },
             loading: { title: <Spinner />, description: "Please wait" },
           });

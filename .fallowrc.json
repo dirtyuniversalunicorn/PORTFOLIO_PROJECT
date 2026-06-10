@@ -1,0 +1,9 @@
+{
+  "ignorePatterns": ["src/generated/prisma/**"],
+  "duplicates": {
+    "ignore": ["src/generated/prisma/**"]
+  },
+  "health": {
+    "ignore": ["src/generated/prisma/**"]
+  }
+}

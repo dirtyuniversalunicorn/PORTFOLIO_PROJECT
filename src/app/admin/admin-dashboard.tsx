@@ -3,7 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
 import { Button } from "@/components/button";
-import { Table } from "@/components/table";
+import { AdminProjectsTable } from "@/features/admin-projects/components/admin-projects-table";
 import { Role } from "@/generated/prisma/enums";
 import { getSession, hasPermission } from "@/lib/dal";
 
@@ -22,7 +22,7 @@ export const AdminDashboard = async () => {
           <Button buttonTitle="Add new project" />
         </Link>
         <Suspense fallback={<Skeleton />}>
-          <Table />
+          <AdminProjectsTable />
         </Suspense>
       </Box>
     </Box>

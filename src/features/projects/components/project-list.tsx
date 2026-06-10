@@ -2,11 +2,11 @@ import { Badge, Link, List, Text, Wrap } from "@chakra-ui/react";
 import type { Project } from "@/generated/prisma/client";
 import prisma from "@/lib/prisma";
 
-export type ProjectDataProps = {
+export type ProjectListProps = {
   limit?: number | "all";
 };
 
-export async function ProjectsData({ limit }: ProjectDataProps) {
+export async function ProjectList({ limit }: ProjectListProps) {
   "use cache";
   let projects: Project[] = [];
 
