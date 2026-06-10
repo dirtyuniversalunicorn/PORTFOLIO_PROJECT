@@ -61,8 +61,17 @@ export function CreateProjectForm() {
           throw new Error(`Upload failed: ${file.name}`);
         }
 
-        const { url } = await res.json();
-        return url;
+        const uploadBody: unknown = await res.json();
+        const uploadPayload =
+          uploadBody && typeof uploadBody === "object"
+            ? (uploadBody as Record<string, unknown>)
+            : {};
+
+        if (typeof uploadPayload.url !== "string") {
+          throw new Error(`Upload response missing URL: ${file.name}`);
+        }
+
+        return uploadPayload.url;
       }),
     );
 

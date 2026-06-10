@@ -32,13 +32,19 @@ export const ContactForm = () => {
       body: JSON.stringify(payload),
     });
 
-    const data = await res.json();
+    const data: unknown = await res.json();
+    const responsePayload =
+      data && typeof data === "object" ? (data as Record<string, unknown>) : {};
 
     if (!res.ok) {
-      throw new Error(data.error || "Failed to send email");
+      throw new Error(
+        typeof responsePayload.error === "string"
+          ? responsePayload.error
+          : "Failed to send email",
+      );
     }
 
-    return data;
+    return responsePayload;
   };
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {

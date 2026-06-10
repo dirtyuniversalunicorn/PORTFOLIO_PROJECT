@@ -23,9 +23,11 @@ export async function POST(req: Request) {
 
     const resend = new Resend(apiKey);
 
-    const body = await req.json();
-    const token = typeof body?.token === "string" ? body.token : "";
-    const contactResult = contactSchema.safeParse(body);
+    const body: unknown = await req.json();
+    const payload =
+      body && typeof body === "object" ? (body as Record<string, unknown>) : {};
+    const token = typeof payload.token === "string" ? payload.token : "";
+    const contactResult = contactSchema.safeParse(payload);
 
     if (!contactResult.success || !token) {
       return Response.json(
@@ -50,9 +52,13 @@ export async function POST(req: Request) {
       },
     );
 
-    const recaptchaData = await recaptchaRes.json();
+    const recaptchaData: unknown = await recaptchaRes.json();
+    const recaptchaPayload =
+      recaptchaData && typeof recaptchaData === "object"
+        ? (recaptchaData as Record<string, unknown>)
+        : {};
 
-    if (!recaptchaData.success) {
+    if (recaptchaPayload.success !== true) {
       return Response.json(
         { error: "reCAPTCHA verification failed" },
         { status: 403 },

@@ -13,6 +13,7 @@
       "!.next",
       "!dist",
       "!build",
+      "!cloudflare-env.d.ts",
       "!src/generated",
       "!**/prisma"
     ]
