@@ -11,7 +11,11 @@ export async function ProjectList({ limit }: ProjectListProps) {
 
   try {
     projects = await prisma.project.findMany();
-  } catch {
+  } catch (error) {
+    if (!process.env.CI) {
+      throw error;
+    }
+
     projects = [];
   }
 

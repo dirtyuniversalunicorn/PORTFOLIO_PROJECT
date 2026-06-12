@@ -10,7 +10,11 @@ export const Certificates = async () => {
   let certificates: Certificate[] = [];
   try {
     certificates = await prisma.certificate.findMany();
-  } catch {
+  } catch (error) {
+    if (!process.env.CI) {
+      throw error;
+    }
+
     certificates = [];
   }
   return (
