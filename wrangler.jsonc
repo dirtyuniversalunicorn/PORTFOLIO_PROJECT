@@ -8,6 +8,18 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "routes": [
+    {
+      "pattern": "jaroslavfilo.com",
+      "zone_name": "jaroslavfilo.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.jaroslavfilo.com",
+      "zone_name": "jaroslavfilo.com",
+      "custom_domain": true
+    }
+  ],
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
