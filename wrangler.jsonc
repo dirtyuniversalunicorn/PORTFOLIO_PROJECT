@@ -2,6 +2,16 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "portfolio-project",
   "main": ".open-next/worker.js",
+  "find_additional_modules": true,
+  "preserve_file_names": true,
+  "base_dir": ".open-next/server-functions/default",
+  "rules": [
+    {
+      "type": "Data",
+      "globs": ["static/wasm/*.wasm"],
+      "fallthrough": false
+    }
+  ],
   "compatibility_date": "2026-06-10",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
