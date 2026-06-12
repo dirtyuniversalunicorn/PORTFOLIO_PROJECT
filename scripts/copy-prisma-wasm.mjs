@@ -62,11 +62,19 @@ const wasmMapEntries = wasmFiles
 
 let handler = await readFile(handlerPath, "utf8");
 
-if (!handler.includes("const __prismaWasmModules = {")) {
-  handler = handler.replace(
-    /^(import [^\n]+;\r?\n)/,
-    `$1${wasmImports}\nconst __prismaWasmModules = {\n${wasmMapEntries}\n};\n`,
+if (!handler.includes("globalThis.__prismaWasmModules = {")) {
+  const handlerWithWasmMap = handler.replace(
+    /^(import [^\n]+(?:;\r?\n|\r?\n))/,
+    `$1${wasmImports}\nglobalThis.__prismaWasmModules = {\n${wasmMapEntries}\n};\n`,
   );
+
+  if (handlerWithWasmMap === handler) {
+    throw new Error(
+      "Could not inject Prisma WASM imports into OpenNext handler.",
+    );
+  }
+
+  handler = handlerWithWasmMap;
 }
 
 const patchedHandler = handler.replace(
@@ -80,7 +88,7 @@ const patchedHandler = handler.replace(
       return match;
     }
 
-    return `${prefix}Promise.resolve().then(()=>Object.assign(${exportsName},new WebAssembly.Instance(__prismaWasmModules[${hashName}],${importsName}).exports))`;
+    return `${prefix}Promise.resolve().then(()=>Object.assign(${exportsName},new WebAssembly.Instance(globalThis.__prismaWasmModules[${hashName}],${importsName}).exports))`;
   },
 );
 
