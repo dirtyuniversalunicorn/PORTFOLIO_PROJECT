@@ -7,9 +7,9 @@
   "base_dir": ".open-next/server-functions/default",
   "rules": [
     {
-      "type": "Data",
+      "type": "CompiledWasm",
       "globs": ["static/wasm/*.wasm"],
-      "fallthrough": false
+      "fallthrough": true
     }
   ],
   "compatibility_date": "2026-06-10",

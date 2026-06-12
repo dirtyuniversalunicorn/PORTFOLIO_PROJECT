@@ -1,4 +1,10 @@
-import { copyFile, mkdir, readdir } from "node:fs/promises";
+import {
+  copyFile,
+  mkdir,
+  readdir,
+  readFile,
+  writeFile,
+} from "node:fs/promises";
 import path from "node:path";
 
 const sourceDir = path.join(".next", "server", "chunks", "static", "wasm");
@@ -8,6 +14,12 @@ const targetDir = path.join(
   "default",
   "static",
   "wasm",
+);
+const handlerPath = path.join(
+  ".open-next",
+  "server-functions",
+  "default",
+  "handler.mjs",
 );
 
 let wasmFiles;
@@ -34,3 +46,49 @@ await Promise.all(
 );
 
 console.log(`Copied ${wasmFiles.length} server WASM chunk(s) for Cloudflare.`);
+
+const wasmImports = wasmFiles
+  .map(
+    (file, index) =>
+      `import __prismaWasm${index} from "./static/wasm/${file}";`,
+  )
+  .join("\n");
+const wasmMapEntries = wasmFiles
+  .map(
+    (file, index) =>
+      `  "${path.basename(file, ".wasm")}": __prismaWasm${index},`,
+  )
+  .join("\n");
+
+let handler = await readFile(handlerPath, "utf8");
+
+if (!handler.includes("const __prismaWasmModules = {")) {
+  handler = handler.replace(
+    /^(import [^\n]+;\r?\n)/,
+    `$1${wasmImports}\nconst __prismaWasmModules = {\n${wasmMapEntries}\n};\n`,
+  );
+}
+
+const patchedHandler = handler.replace(
+  /([A-Za-z_$][\w$]*\.v=\(([^)]*)\)=>)new Promise[\s\S]*?\.then\([^=]+=>Object\.assign\([^,]+,[^)]*?\.instance\.exports\)\)(?=,[A-Za-z_$][\w$]*=\{311:1\})/,
+  (match, prefix, params) => {
+    const [exportsName, _moduleIdName, hashName, importsName] = params
+      .split(",")
+      .map((param) => param.trim());
+
+    if (!exportsName || !hashName || !importsName) {
+      return match;
+    }
+
+    return `${prefix}Promise.resolve().then(()=>Object.assign(${exportsName},new WebAssembly.Instance(__prismaWasmModules[${hashName}],${importsName}).exports))`;
+  },
+);
+
+if (patchedHandler === handler) {
+  throw new Error(
+    "Could not patch Next server WASM runtime in OpenNext handler.",
+  );
+}
+
+await writeFile(handlerPath, patchedHandler);
+console.log("Patched OpenNext server WASM runtime for Cloudflare.");
