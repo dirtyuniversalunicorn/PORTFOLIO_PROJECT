@@ -56,7 +56,7 @@ const wasmImports = wasmFiles
 const wasmMapEntries = wasmFiles
   .map(
     (file, index) =>
-      `  "${path.basename(file, ".wasm")}": __prismaWasm${index},`,
+      `  "${path.basename(file, ".wasm")}": __normalizePrismaWasm(__prismaWasm${index}),`,
   )
   .join("\n");
 
@@ -65,7 +65,7 @@ let handler = await readFile(handlerPath, "utf8");
 if (!handler.includes("globalThis.__prismaWasmModules = {")) {
   const handlerWithWasmMap = handler.replace(
     /^(import [^\n]+(?:;\r?\n|\r?\n))/,
-    `$1${wasmImports}\nglobalThis.__prismaWasmModules = {\n${wasmMapEntries}\n};\n`,
+    `$1${wasmImports}\nconst __normalizePrismaWasm = (module) => module?.default ?? module;\nglobalThis.__prismaWasmModules = {\n${wasmMapEntries}\n};\n`,
   );
 
   if (handlerWithWasmMap === handler) {
@@ -92,11 +92,23 @@ const patchedHandler = handler.replace(
   },
 );
 
-if (patchedHandler === handler) {
+const prismaWasmHash = path.basename(wasmFiles[0], ".wasm");
+const patchedPrismaGetter = patchedHandler.replace(
+  /getQueryCompilerWasmModule:async\(\)=>\{let\{default:[^}]+}=await [^;]+;return [^}]+}/g,
+  `getQueryCompilerWasmModule:async()=>globalThis.__prismaWasmModules["${prismaWasmHash}"]`,
+);
+
+if (
+  patchedHandler === handler ||
+  patchedPrismaGetter === patchedHandler ||
+  patchedPrismaGetter.includes(
+    "getQueryCompilerWasmModule:async()=>{let{default:",
+  )
+) {
   throw new Error(
     "Could not patch Next server WASM runtime in OpenNext handler.",
   );
 }
 
-await writeFile(handlerPath, patchedHandler);
+await writeFile(handlerPath, patchedPrismaGetter);
 console.log("Patched OpenNext server WASM runtime for Cloudflare.");
