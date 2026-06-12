@@ -7,7 +7,6 @@ export type ProjectListProps = {
 };
 
 export async function ProjectList({ limit }: ProjectListProps) {
-  "use cache";
   let projects: Project[] = [];
 
   try {

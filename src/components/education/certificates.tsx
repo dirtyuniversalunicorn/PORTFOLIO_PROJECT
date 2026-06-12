@@ -7,7 +7,6 @@ import { CertificatesClient } from "./certificates-client";
 // is there way to not double the information, since the same enum is used in prisma.schema
 
 export const Certificates = async () => {
-  "use cache";
   let certificates: Certificate[] = [];
   try {
     certificates = await prisma.certificate.findMany();

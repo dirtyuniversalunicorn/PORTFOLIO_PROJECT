@@ -5,8 +5,6 @@ import { MarqueeSlider } from "./marquee-slider";
 const ICON_SIZE = 40;
 
 export const Marquee = async () => {
-  "use cache";
-
   const allTechItems = techStackItems.flatMap((category) => category.items);
 
   return (

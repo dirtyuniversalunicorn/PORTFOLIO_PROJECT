@@ -5,7 +5,6 @@ import { getProjectBySlug } from "@/features/projects/queries";
 import { ProjectCharacteristics } from "./project-characteristics";
 
 export async function ProjectDetail({ slug }: { slug: string }) {
-  "use cache";
   const projectDetails = await getProjectBySlug(slug);
 
   if (!projectDetails) {
